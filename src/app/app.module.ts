@@ -8,6 +8,9 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { ExperienciasComponent } from './experiencias/experiencias.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { LoginComponent } from './login/login.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     RodapeComponent,
     ExperienciasComponent,
     ContatoComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    LoginComponent,
+    CadastrarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
