@@ -8,6 +8,6 @@ export class Produto{
   public preco: number
   public multimidia: string
   public curtidas: number
-  public categoria: Categoria[]
-  public user: User[]
+  public categoria: Categoria
+  public usuario: User
 }
