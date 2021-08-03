@@ -2,30 +2,40 @@
 
 <div class="col-md-3 container">
   <form>
-    <div class="form-group pb-3">
-      <label for="exampleFormControlInput1 mb-3">Nome completo</label>
-      <input type="texto" class="form-control email" id="exampleFormControlInput2">
+    <div class="form-group pb-3 mb-3">
+      <label for="nome">Nome completo</label>
+      <input [(ngModel)]='user.nomeCompleto' type="texto" class="form-control email" id="nome" placeholder="Digite seu nome">
     </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-        placeholder="(99) 99999-9999">
+    <div class="form-group mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input [(ngModel)]='user.email' type="email" class="form-control" id="email" aria-describedby="emailHelp"
+        placeholder="Digite seu email">
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+    <div class="form-group mb-3">
+      <label for="senha" class="form-label">Senha</label>
+      <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" placeholder="Sua senha">
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Confirmar senha</label>
-      <input type="password" class="form-control" id="exampleInputPassword2">
+    <div class="form-group mb-3">
+      <label for="confirmarSenha" class="form-label">Confirmar senha</label>
+      <input [(ngModel)]='user.senha' type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua senha">
     </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Data de nascimento</label>
-      <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
-        placeholder="YYYY-MM-DD">
+    <div class="form-group mb-3">
+      <label for="dataNascimento" class="form-label">Data de nascimento</label>
+      <input [(ngModel)]='user.dataNascimento' type="date" class="form-control" id="dataNascimento" placeholder="AAAA-MM-DD">
     </div>
-    <div class="d-flex justify-content-center">
-      <a href="/cadastrar.html" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Cadastrar</a>
+
+    <div class="form-group mb-3">
+      <label for="tipo">Tipo de usuário</label>
+      <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+          <option>Selecione um tipo de usuário:</option>
+          <option value="cliente">Cliente</option>
+          <option value="vendedor">Vendedor</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button type="submit" class="btn btn-outline-danger me-4" routerLink="/logar">Cancelar</button>
+      <button type="submit" class="btn btn-outline-success" (click)='cadastrar()'>Cadastrar</button>
     </div>
 
   </form>
