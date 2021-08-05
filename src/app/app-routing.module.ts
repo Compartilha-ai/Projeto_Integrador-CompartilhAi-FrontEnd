@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'contato', component: ContatoComponent},
   {path: 'sobre', component: SobreNosComponent},
-  {path: 'experiencias', component: ExperienciasComponent},
+  {path: 'produto', component: ExperienciasComponent},
 ];
 
 @NgModule({

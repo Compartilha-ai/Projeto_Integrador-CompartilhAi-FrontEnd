@@ -10,19 +10,23 @@
 
   </div>
   <div class="container">
-    <div class="card-deck">
-      <div *ngFor='let produto of listaProduto' class="card">
-        <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{produto.nome}}</h5>
-            <p class="card-text">{{produto.categoria}}</p>
-            <p class="card-text">{{produto.descricao}}</p>
-            <p class="card-text">R$ {{produto.preco}}</p>
+    <div class="row">
+      <div *ngFor='let produto of listaProduto' class="col-md-3">
+        <div class="card-deck grow">
+          <div class="card" style="height: 28rem;">
+            <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">{{produto.nome}}</h5>
+                <p class="card-text">{{produto.categoria.nome}}</p>
+                <p class="card-text">{{produto.descricao}}</p>
+                <p class="card-text">R$ {{produto.preco}}</p>
+              </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -45,21 +49,21 @@
             <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"></textarea>
           </div>
           <div class="form-group">
-            <label for="categoria">Escolha uma categoria</label>
-            <select class="form-control" name="categoria" id="categoria">
+          <label for="categoria">Escolha uma categoria</label> <!-- como inserir essa opção no banco de dados? Usando ngModel? -->
+            <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria"> 
               <option value="">Categorias</option>
-              <option value="">Artes</option>
-              <option value="">Dança</option>
-              <option value="">Entretenimento</option>
-              <option value="">Gastronomia</option>
-              <option value="">História/Cultura</option>
-              <option value="">Música</option>
-              <option value="">Tecnologia</option>
+              <option value="1">Artes</option> <!--Precisa inserir algum value?-->
+              <option value="2">Dança</option>
+              <option value="3">Entretenimento</option>
+              <option value="4">Gastronomia</option>
+              <option value="5">História e Cultura</option>
+              <option value="6">Música</option>
+              <option value="7">Tecnologia</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="valor">Quanto vale sua Experiência?</label>
-            <input [(ngModel)]='produto.preco' type="currency" class="form-control" id="valor" placeholder="Insira o valor">
+            <label for="valor">Quanto vale sua Experiência?</label> <!-- Como mudar para inserir o valor com vírgula? -->
+            <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor" placeholder="Insira o valor">
           </div>
           <div class="form-group">
             <label for="imagem">Compartilhe uma foto real da sua Experiência</label>

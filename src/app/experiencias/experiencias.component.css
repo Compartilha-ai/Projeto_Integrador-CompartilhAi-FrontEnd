@@ -9,3 +9,7 @@
 .txt-laranja {
     color: #FF8804;
 }
+
+.grow:hover {
+    transform: scale(110%) !important
+}
