@@ -1,65 +1,55 @@
-<<<<<<< HEAD
 <div class="bg-creme">
   <div class="jumbotron jumbotron-fluid bg-creme text-light">
     <div class="container">
       <h1 class="display-4">Experiências</h1>
       <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
     </div>
-=======
-<div class="jumbotron jumbotron-fluid" id="topo">
-  <div class="container">
-    <h1 class="display-4">Experiências</h1>
-    <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
->>>>>>> feae64712a6864f7c4f59273cae547b84ad9e95b
+    <div class="d-flex justify-content-center">
+      <button (click)='cadastrarProduto()'class="btn btn-dark">Cadastrar Experiência</button>
+  </div>
+
   </div>
   <div class="container">
     <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título da experiência</h5>
-          <p class="card-text">Texto descritivo da experiência.</p>
-          <p class="card-text">Valor: R$00,00</p>
-        </div>
+      <div *ngFor='let produto of listaProduto' class="card">
+        <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">{{produto.nome}}</h5>
+            <p class="card-text">{{produto.categoria}}</p>
+            <p class="card-text">{{produto.descricao}}</p>
+            <p class="card-text">{{produto.preco}}</p>
+          </div>
       </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título da experiência</h5>
-          <p class="card-text">Texto descritivo da experiência.</p>
-          <p class="card-text">Valor: R$00,00</p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título da experiência</h5>
-          <p class="card-text">Texto descritivo da experiência.</p>
-          <p class="card-text">Valor: R$00,00</p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título da experiência</h5>
-          <p class="card-text">Texto descritivo da experiência.</p>
-          <p class="card-text">Valor: R$00,00</p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título da experiência</h5>
-          <p class="card-text">Texto descritivo da experiência.</p>
-          <p class="card-text">Valor: R$00,00</p>
-        </div>
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-</div>
-=======
-</div>
 
-<app-rodape></app-rodape>
->>>>>>> feae64712a6864f7c4f59273cae547b84ad9e95b
+
+
+  
+
+  <!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+  Abrir modal de demonstração
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
