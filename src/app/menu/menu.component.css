@@ -1,8 +1,15 @@
-.bg-navbar {
-    background-color: #2D2E39;
-    opacity: 0.5;
+ .bg-navbar {
+    background-color: #0c0b31;
+    width: 100%;
 }
-
+/*
 .txt-amarelo {
     color: #F0C80A;
-}
+} */
+
+.navbar{
+    position: absolute;  
+  }
+
+
+  
