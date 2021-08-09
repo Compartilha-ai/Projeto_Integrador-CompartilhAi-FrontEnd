@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -11,6 +14,10 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class ExperienciasComponent implements OnInit {
 
+  user: User = new User()
+  idUser = environment.id
+  id = environment.id
+
   produto: Produto = new Produto()
   listaProduto: Produto[]
 
@@ -18,12 +25,20 @@ export class ExperienciasComponent implements OnInit {
   tipoCategoria: number
 
   constructor(
+    private authService: AuthService,
     private router: Router,
     private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
    this.findAllProduto()
+  }
+
+
+  findByIdUser () {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User)=>{
+      this.user = resp
+    })
   }
 
   findAllProduto(){

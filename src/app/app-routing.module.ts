@@ -5,6 +5,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { ExperienciasComponent } from './experiencias/experiencias.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'contato', component: ContatoComponent},
   {path: 'sobre', component: SobreNosComponent},
   {path: 'produto', component: ExperienciasComponent},
+  {path: 'minhas-experiencias/:id', component: MinhasExperienciasComponent}
 ];
 
 @NgModule({

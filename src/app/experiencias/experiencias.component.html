@@ -4,8 +4,11 @@
       <h1 class="display-4">Experiências</h1>
       <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
     <div class="d-flex justify-content-rigth">
-      <button class="btn btn-dark" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar Experiência</button>
+      <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar Experiência</button>
+
+     <a (click)='findByIdUser()'> <button class="btn btn-dark"  [routerLink]="['/minhas-experiencias', id]" >Minhas Experiências</button></a>
     </div>
+
   </div>
 
   </div>
@@ -50,7 +53,7 @@
           </div>
           <div class="form-group">
           <label for="categoria">Escolha uma categoria</label> <!-- como inserir essa opção no banco de dados? Usando ngModel? -->
-            <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria"> 
+            <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria">
               <option value="">Categorias</option>
               <option value="1">Artes</option> <!--Precisa inserir algum value?-->
               <option value="2">Dança</option>

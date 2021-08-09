@@ -13,7 +13,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CategoriaComponent } from './categoria/categoria.component'
+import { CategoriaComponent } from './categoria/categoria.component';
+import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CategoriaComponent } from './categoria/categoria.component'
     LoginComponent,
     CadastrarComponent,
     HomeComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    MinhasExperienciasComponent
   ],
   imports: [
     BrowserModule,
