@@ -1,7 +1,8 @@
-.bg-lilas {
-    background-color: purple;
+.bg-verde {
+    background-color:#DEEDF0;
 }
 
 .sob-navbar {
-    padding: 6rem 2rem;
+    padding: 6rem;
+    height: 14rem;
 }

@@ -1,7 +1,18 @@
-.bg-amarelo {
-    background-color: rgb(156, 52, 116);
-}
+
 
 .sob-navbar {
         padding: 6rem 2rem;
 }
+
+
+
+.fa{
+  color: black;
+}
+
+.fa:hover{
+ color: #5CA38E
+}
+
+
+
