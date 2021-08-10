@@ -1,1 +1,37 @@
-<p>produto-delete works!</p>
+<div class="container mb-5 mt-5">
+
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <h1 class="text-center">Apagar experiência</h1>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <h4 class="text-center text-secondary">Você tem certeza que deseja apagar essa experiência?</h4>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-3">
+        <div class="card-deck grow mb-2">
+          <div class="card" style="height: 28rem;">
+            <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title">{{produto.nome}}</h5>
+              <p class="card-text">{{produto.categoria.nome}}</p>
+              <p class="card-text">{{produto.descricao}}</p>
+              <p class="card-text">R$ {{produto.preco}}</p>
+                <div class="row d-flex justify-content-center">
+                  <button class="btn btn-danger mr-4" routerLink="/produto">Não</button>
+                   <button class="btn btn-success" (click)='apagar()'>Sim</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -19,7 +19,8 @@ const routes: Routes = [
   {path: 'sobre', component: SobreNosComponent},
   {path: 'produto', component: ExperienciasComponent},
   {path: 'minhas-experiencias/:id', component: MinhasExperienciasComponent},
-  {path: 'produto-edit/:id' , component: ProdutoEditComponent},{path: 'produto-delete/:id' , component: ProdutoDeleteComponent}
+  {path: 'produto-edit/:id' , component: ProdutoEditComponent},
+  {path: 'produto-delete/:id' , component: ProdutoDeleteComponent}
 ];
 
 @NgModule({

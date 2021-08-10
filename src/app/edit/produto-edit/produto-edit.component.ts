@@ -26,7 +26,7 @@ export class ProdutoEditComponent implements OnInit {
   listaCategoria: Categoria[]
   idCategoria: number
   tipoCategoria: number
-  
+
   constructor(
     private route: ActivatedRoute,
     private authService: AuthService,
@@ -41,7 +41,8 @@ export class ProdutoEditComponent implements OnInit {
       alert('Sua sessão expirou. Faça o login novamente.')
       this.router.navigate(['/login'])
     }
-
+     let id =this.route.snapshot.params['id'];
+     this.findByIdExperiencia(id)
   }
 
   categoriaId(event: any) {
@@ -49,10 +50,14 @@ export class ProdutoEditComponent implements OnInit {
 
   }
 
-  atualizar(){
-    this.categoria.id = this.idCategoria
-    this.produto.categoria = this.categoria
+  findByIdExperiencia(id: number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=> {
+      this.produto = resp
+    })
+  }
 
+  atualizar(){
+    console.log(this.produto)
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp
     alert('Experiência atualizada com sucesso!')

@@ -1,4 +1,10 @@
+import { ProdutoService } from './../../service/produto.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Produto } from 'src/app/model/Produto';
+import { environment } from 'src/environments/environment.prod';
+import { CategoriaService } from 'src/app/service/categoria.service';
+import { Categoria } from 'src/app/model/Categoria';
 
 @Component({
   selector: 'app-produto-delete',
@@ -7,9 +13,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoDeleteComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  idProduto: number
 
-  ngOnInit(): void {
+  listaCategoria: Categoria[]
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
+  ) { }
+
+  ngOnInit() {
+    window.scroll(0,0)
+
+    if(environment.token == '') {
+      alert('Sua seção expirou, faça o login novamente!')
+      this.router.navigate(['/entrar'])
+    }
+
+    this.idProduto = this.route.snapshot.params['id']
+    this.findByIdProduto(this.idProduto)
+    this.getAllCategoria()
+  }
+
+  findByIdProduto (id: number) {
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto = resp
+    })
+  }
+
+  apagar () {
+    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
+      alert('Experiência apagada com sucesso!')
+      this.router.navigate(['/produto'])
+    })
+  }
+
+  getAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategoria = resp
+    })
   }
 
 }
