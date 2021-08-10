@@ -35,12 +35,10 @@ export class MinhasExperienciasComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
-    this.userId=this.route.snapshot.params['id']
-
-    this.findByIdUser(this.userId)
+    
     this.findAllProduto()
-
-    console.log(this.user)
+    this.userId=this.route.snapshot.params['id']
+    this.findByIdUser(this.userId)
   }
 
 

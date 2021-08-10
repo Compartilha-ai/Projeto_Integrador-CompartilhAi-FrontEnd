@@ -2,19 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <div  *ngFor='let produto of user.produto' class="card-deck grow">
+        <div class="card-deck grow mb-2" *ngFor='let produto of user.produto'>
           <div class="card" style="height: 28rem;">
             <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
-              <div class="card-body">
-                <h5 class="card-title">{{produto.nome}}</h5>
-                <p class="card-text">{{produto.categoria.nome}}</p>
-                <p class="card-text">{{produto.descricao}}</p>
-                <p class="card-text">R$ {{produto.preco}}</p>
-              </div>
+            <div class="card-body">
+              <h5 class="card-title">{{produto.nome}}</h5>
+              <p class="card-text">{{produto.categoria.nome}}</p>
+              <p class="card-text">{{produto.descricao}}</p>
+              <p class="card-text">R$ {{produto.preco}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
