@@ -20,7 +20,7 @@ export class AuthService {
 
 
   getByIdUser (id: number): Observable<User> {
-    return this.http.get<User>(`https://compartilhai.herokuapp.com/usuarios/${id}`, this.token)
+    return this.http.get<User>(`https://compartilhai.herokuapp.com/usuarios/${id}`)
   }
 
   login(userLogin: UserLogin): Observable<UserLogin>{
@@ -32,12 +32,12 @@ export class AuthService {
   }
 
   logado(){
-    // let ok: boolean = false
+    let ok: boolean = false
 
-    // if (environment.token != ''){
-    //   ok = true
-    // }
+    if (environment.token != ''){
+      ok = true
+    }
 
-    // return ok
+    return ok
   }
 }

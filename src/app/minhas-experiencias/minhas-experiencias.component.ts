@@ -1,3 +1,4 @@
+import { Categoria } from './../model/Categoria';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -16,10 +17,12 @@ export class MinhasExperienciasComponent implements OnInit {
 
   user: User = new User()
   idUser = environment.id
-  userId : number
+  userId: number
 
   produto: Produto = new Produto()
   listaProduto: Produto[]
+
+  listaCategoria: Categoria[]
 
   constructor(
     private route: ActivatedRoute,
@@ -35,26 +38,29 @@ export class MinhasExperienciasComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
-    
-    this.findAllProduto()
-    this.userId=this.route.snapshot.params['id']
+    this.userId = this.route.snapshot.params["id"]
     this.findByIdUser(this.userId)
+
+    this.getAllCategoria()
+    this.getAllProduto()
+
   }
-
-
-  findAllProduto(){
-
-   this.produtoService.getAllProduto().subscribe((resp: Produto[]) =>{
-      this.listaProduto = resp
-    })
-
-    this.findByIdUser(this.userId)
-  }
-
 
   findByIdUser(id: number){
     this.authService.getByIdUser(id).subscribe((resp: User)=>{
       this.user = resp
+    })
+  }
+
+  getAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategoria = resp
+    })
+  }
+
+  getAllProduto() {
+    this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
     })
   }
 

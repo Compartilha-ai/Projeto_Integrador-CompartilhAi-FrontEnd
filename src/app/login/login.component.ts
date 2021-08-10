@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
       environment.nomeCompleto = this.userLogin.nomeCompleto
       environment.id = this.userLogin.id
       environment.foto = this.userLogin.foto
+      console.log(environment.id)
       this.router.navigate(['/home'])
     }, error => {
       if(error.status == 500){

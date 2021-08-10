@@ -22,27 +22,27 @@ export class CategoriaService {
   }
 
   getByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`https://compartilhai.herokuapp.com/categoria/${id}`, this.token)
+    return this.http.get<Categoria>(`https://compartilhai.herokuapp.com/categoria/${id}`)
   }
-  
+
   getByNomeCategoria(nome: string): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(`https://compartilhai.herokuapp.com/categoria/nome/${nome}`)
   }
-  
+
   getByPalavraChaveCategoria(palavraChave: string): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(`https://compartilhai.herokuapp.com/categoria/palavrachave/${palavraChave}`)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('https://compartilhai.herokuapp.com/categoria', categoria, this.token)
+    return this.http.post<Categoria>('https://compartilhai.herokuapp.com/categoria', categoria)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('https://compartilhai.herokuapp.com/categoria', categoria, this.token)
+    return this.http.put<Categoria>('https://compartilhai.herokuapp.com/categoria', categoria)
   }
 
   deleteCategoria(id: number) {
-    return this.http.delete(`https://compartilhai.herokuapp.com/categoria/${id}`, this.token)
+    return this.http.delete(`https://compartilhai.herokuapp.com/categoria/${id}`)
   }
 
 }

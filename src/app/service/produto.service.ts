@@ -24,13 +24,13 @@ export class ProdutoService {
   }
 
   getByIdProduto(id: number): Observable<Produto>{
-    return this.http.get<Produto>(`https://compartilhai.herokuapp.com/produto/${id}`, this.token)
+    return this.http.get<Produto>(`https://compartilhai.herokuapp.com/produto/${id}`)
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
     return this.http.get<Produto[]>(`https://compartilhai.herokuapp.com/produtp/nome/${nome}`)
   }
-  
+
   getByPrecoMaiorProduto(preco: number): Observable<Produto[]>{
     return this.http.get<Produto[]>(`https://compartilhai.herokuapp.com/produto/precomaior/${preco}`)
   }
@@ -40,22 +40,22 @@ export class ProdutoService {
   }
 
   postProduto(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('https://compartilhai.herokuapp.com/produto', produto, this.token)
+    return this.http.post<Produto>('https://compartilhai.herokuapp.com/produto', produto)
   }
 
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('https://compartilhai.herokuapp.com/produto', produto, this.token)
+    return this.http.put<Produto>('https://compartilhai.herokuapp.com/produto', produto)
   }
 
   putCurtirProduto(id: number): Observable<Produto>{
-    return this.http.put<Produto>(`https://compartilhai.herokuapp.com/produto/curtir/${id}`, this.token)
+    return this.http.put<Produto>(`https://compartilhai.herokuapp.com/produto/curtir/${id}`, id)
   }
 
   putDescurtirProduto(id: number): Observable<Produto>{
-    return this.http.put<Produto>(`https://compartilhai.herokuapp.com/produto/descurtir/${id}`, this.token)
+    return this.http.put<Produto>(`https://compartilhai.herokuapp.com/produto/descurtir/${id}`, id)
   }
 
   deleteProduto(id: number) {
-    return this.http.delete(`https://compartilhai.herokuapp.com/produto/${id}`, this.token)
+    return this.http.delete(`https://compartilhai.herokuapp.com/produto/${id}`)
   }
 }

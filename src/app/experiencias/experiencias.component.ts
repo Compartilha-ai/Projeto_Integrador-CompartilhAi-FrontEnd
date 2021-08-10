@@ -55,10 +55,12 @@ export class ExperienciasComponent implements OnInit {
   cadastrarProduto(){
     this.categoria.id = this.tipoCategoria
     this.produto.categoria = this.categoria
-    console.log(this.produto)
+
+    this.user.id = this.idUser
+    this.produto.usuario = this.user
+
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
-      console.log(this.produto)
       alert('Produto cadastrado com sucesso!')
       this.findAllProduto()
       this.produto = new Produto()
