@@ -44,6 +44,7 @@ export class MinhasExperienciasComponent implements OnInit {
     this.getAllCategoria()
     this.getAllProduto()
 
+
   }
 
   findByIdUser(id: number){
@@ -63,6 +64,5 @@ export class MinhasExperienciasComponent implements OnInit {
       this.listaProduto = resp
     })
   }
-
 
 }

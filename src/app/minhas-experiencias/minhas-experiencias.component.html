@@ -10,7 +10,12 @@
               <p class="card-text">{{produto.categoria.nome}}</p>
               <p class="card-text">{{produto.descricao}}</p>
               <p class="card-text">R$ {{produto.preco}}</p>
+                <div class="row d-flex justify-content-center ml-5 mr-5">
+                  <button type="button" class="btn btn-warning mr-3" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+                  <button type="button" class="btn btn-danger" [routerLink]="['/produto-delete', produto.id]">Deletar</button>
+                </div>
             </div>
+            
           </div>
         </div>
       </div>

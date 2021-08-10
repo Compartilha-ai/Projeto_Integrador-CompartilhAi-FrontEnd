@@ -15,7 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './categoria/categoria.component';
-import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component'
+import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component'
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experi
     CadastrarComponent,
     HomeComponent,
     CategoriaComponent,
-    MinhasExperienciasComponent
+    MinhasExperienciasComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,
