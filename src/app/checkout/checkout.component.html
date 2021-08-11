@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="row mt-3 mb-4">
+      <div class="col-md-12">
+        <h1 class="text-center">Detalhes do pedido</h1>
+      </div>
+    </div>
+
+    <!-- LINHA DA DIV MAIOR -->
+    <div class="container d-flex justify-content-center">
+      <div class="col-md-10 borda">
+
+      <!-- DIV DA EXPERIÊNCIA -->
+      <div class="row mt-3">
+
+        <!-- foto do produto -->
+        <div class="col-md-3">
+          <div class="card">
+            <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem do produto">
+          </div>
+        </div>
+
+        <!-- nome e descricao do produto -->
+        <div class="col-md-5">
+          <h5 class="card-title">{{produto.nome}}</h5>
+              <p class="card-text">{{produto.descricao}}</p>
+        </div>
+
+        <!-- preço -->
+        <div class="col-md-4 d-flex justify-content-center">
+            <p class="card-text d-flex align-items-center">R$ {{produto.preco}}</p>
+        </div>
+
+      </div>
+
+      <!-- DIV FINAL -->
+      <div class="row">
+
+        <!-- botão de finalizar -->
+        <div class="col-md-12 d-flex justify-content-center">
+          <button type="button" class="btn btn-outline-success mt-5 mb-2">Finalizar compra</button>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+</div>

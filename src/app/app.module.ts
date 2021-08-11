@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
-import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component'
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { CheckoutComponent } from './checkout/checkout.component'
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     CategoriaComponent,
     MinhasExperienciasComponent,
     ProdutoEditComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

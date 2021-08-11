@@ -25,9 +25,8 @@ export class ExperienciasComponent implements OnInit {
   tipoCategoria: number
 
   constructor(
-    private authService: AuthService,
-    private router: Router,
-    private produtoService: ProdutoService
+    public authService: AuthService,
+    private produtoService: ProdutoService,
   ) { }
 
   ngOnInit() {

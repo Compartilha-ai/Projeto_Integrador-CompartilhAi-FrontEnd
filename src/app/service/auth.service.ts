@@ -11,7 +11,7 @@ import { UserLogin } from '../model/UserLogin';
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   token = {
@@ -35,6 +35,16 @@ export class AuthService {
     let ok: boolean = false
 
     if (environment.token != ''){
+      ok = true
+    }
+
+    return ok
+  }
+
+  vendedor () {
+    let ok: boolean = false
+
+    if (environment.tipo == 'vendedor') {
       ok = true
     }
 

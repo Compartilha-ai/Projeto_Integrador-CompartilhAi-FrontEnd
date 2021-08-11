@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './checkout/checkout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'produto', component: ExperienciasComponent},
   {path: 'minhas-experiencias/:id', component: MinhasExperienciasComponent},
   {path: 'produto-edit/:id' , component: ProdutoEditComponent},
-  {path: 'produto-delete/:id' , component: ProdutoDeleteComponent}
+  {path: 'produto-delete/:id' , component: ProdutoDeleteComponent},
+  {path: 'checkout/:id' , component: CheckoutComponent}
 ];
 
 @NgModule({
