@@ -4,6 +4,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ContatoComponent } from './contato/contato.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { ExperienciasComponent } from './experiencias/experiencias.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'produto', component: ExperienciasComponent},
   {path: 'minhas-experiencias/:id', component: MinhasExperienciasComponent},
   {path: 'produto-edit/:id' , component: ProdutoEditComponent},
-  {path: 'produto-delete/:id' , component: ProdutoDeleteComponent}
+  {path: 'produto-delete/:id' , component: ProdutoDeleteComponent},
+  {path: 'user-edit/:id', component: UserEditComponent }
 ];
 
 @NgModule({

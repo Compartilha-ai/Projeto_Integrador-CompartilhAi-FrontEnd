@@ -12,3 +12,20 @@
   }
 
 
+
+.edit-login i{
+  margin-right:5px;
+}
+.edit-login i:hover{
+  cursor: pointer;
+}
+
+.logo{
+  margin-bottom: 8px;
+  margin-left: 5px;
+  width: 120px;
+}
+
+.header{
+  height: 80px;
+}

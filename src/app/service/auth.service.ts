@@ -31,6 +31,10 @@ export class AuthService {
     return this.http.post<User>('https://compartilhai.herokuapp.com/usuarios/cadastrar', user)
   }
 
+  putUser(user: User): Observable<User>{
+    return this.http.put<User>('https://compartilhai.herokuapp.com/usuarios/alterar', user)
+  }
+
   logado(){
     let ok: boolean = false
 
