@@ -23,6 +23,7 @@ export class ExperienciasComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
   tipoCategoria: number
+  produtoPost: string
 
   constructor(
     private authService: AuthService,
@@ -31,6 +32,7 @@ export class ExperienciasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.findByIdUser()
    this.findAllProduto()
   }
 
@@ -65,6 +67,16 @@ export class ExperienciasComponent implements OnInit {
       this.findAllProduto()
       this.produto = new Produto()
     })
+  }
+
+  findByProdutoPostagem(){
+    if(this.produtoPost == ''){
+      this.findAllProduto()
+    } else {
+      this.produtoService.getByNomeProduto(this.produtoPost).subscribe((resp: Produto[])=> {
+        this.listaProduto = resp
+      })
+    }
   }
 
 }

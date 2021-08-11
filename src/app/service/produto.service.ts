@@ -28,7 +28,7 @@ export class ProdutoService {
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`https://compartilhai.herokuapp.com/produtp/nome/${nome}`)
+    return this.http.get<Produto[]>(`https://compartilhai.herokuapp.com/produto/nome/${nome}`)
   }
 
   getByPrecoMaiorProduto(preco: number): Observable<Produto[]>{
