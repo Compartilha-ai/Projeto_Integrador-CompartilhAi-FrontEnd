@@ -1,0 +1,5 @@
+.borda {
+  border: solid 3px;
+  border-radius: 20px;
+  border-color: rgb(238, 236, 236);
+}

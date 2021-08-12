@@ -3,36 +3,55 @@
     <div class="container">
       <h1 class="display-4">Experiências</h1>
       <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
-    <div class="d-flex justify-content-rigth">
 
-      <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado" *ngIf='logado()'>Cadastrar Experiência</button>
+      <div class="d-flex justify-content-rigth">
 
-     <a (click)='findByIdUser()'> <button class="btn btn-dark"  [routerLink]="['/minhas-experiencias', id]" *ngIf='logado()'>Minhas Experiências</button></a>
+        <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado"
+          *ngIf='logado()'>Cadastrar Experiência</button>
+
+        <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]"
+            *ngIf='logado()'>Minhas Experiências</button></a>
 
 
-    </div>
-  </div>
-
-  </div>
-  <div class="container">
-    <div class="row d-flex justify-content-right  mb-5">
-      <div class="col-md-6">
-        <div class="form-group">
-          <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar" [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
-        </div>
       </div>
     </div>
-    <div class="row">
-      <div *ngFor='let produto of listaProduto' class="col-md-3">
-        <div class="card-deck grow">
-          <div class="card" style="height: 28rem;">
-            <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
-              <div class="card-body">
-                <h5 class="card-title">{{produto.nome}}</h5>
-                <p class="card-text">{{produto.categoria.nome}}</p>
-                <p class="card-text">{{produto.descricao}}</p>
-                <p class="card-text">R$ {{produto.preco}}</p>
-              </div>
+
+
+    <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
+      <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar
+        Experiência</button>
+
+      <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]">Minhas
+          Experiências</button></a>
+    </div>
+
+  </div>
+
+
+</div>
+<div class="container">
+  <div class="row d-flex justify-content-right  mb-5">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar"
+          [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor='let produto of listaProduto' class="col-md-3">
+      <div class="card-deck grow">
+        <div class="card" style="height: 28rem;">
+          <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">{{produto.nome}}</h5>
+            <p class="card-text">{{produto.categoria.nome}}</p>
+            <p class="card-text">{{produto.descricao}}</p>
+            <p class="card-text">R$ {{produto.preco}}</p>
+            <div>
+              <button type="button" class="btn btn-outline-success"
+                [routerLink]="['/checkout', produto.id]">Comprar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -40,8 +59,10 @@
   </div>
 </div>
 
+
 <!-- Modal -->
-<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+  aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -54,17 +75,18 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="titulo">Título da Experiência</label>
-            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo"
+              placeholder="Digite o título">
           </div>
           <div class="form-group">
             <label for="texto">Descrição</label>
             <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"></textarea>
           </div>
           <div class="form-group">
-          <label for="categoria">Escolha uma categoria</label> <!-- como inserir essa opção no banco de dados? Usando ngModel? -->
+            <label for="categoria">Escolha uma categoria</label>
             <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria">
               <option value="">Categorias</option>
-              <option value="1">Artes</option> <!--Precisa inserir algum value?-->
+              <option value="1">Artes</option>
               <option value="2">Dança</option>
               <option value="3">Entretenimento</option>
               <option value="4">Gastronomia</option>
@@ -74,18 +96,15 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="valor">Quanto vale sua Experiência?</label> <!-- Como mudar para inserir o valor com vírgula? -->
-            <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor" placeholder="Insira o valor">
+            <label for="valor">Quanto vale sua Experiência?</label>
+            <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor"
+              placeholder="Insira o valor">
           </div>
-          <div class="form-group">
-            <label for="imagem">Compartilhe uma foto real da sua Experiência</label>
-            <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem" placeholder="Insira o link da imagem">
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)='cadastrarProduto()'>Publicar</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" (click)='cadastrarProduto()'>Publicar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>

@@ -19,6 +19,8 @@ import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experi
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component'
+import { CheckoutComponent } from './checkout/checkout.component'
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component'
     MinhasExperienciasComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
-    UserEditComponent
+    UserEditComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

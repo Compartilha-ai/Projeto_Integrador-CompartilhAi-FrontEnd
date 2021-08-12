@@ -26,9 +26,8 @@ export class ExperienciasComponent implements OnInit {
   produtoPost: string
 
   constructor(
-    private authService: AuthService,
-    private router: Router,
-    private produtoService: ProdutoService
+    public authService: AuthService,
+    private produtoService: ProdutoService,
   ) { }
 
   ngOnInit() {
