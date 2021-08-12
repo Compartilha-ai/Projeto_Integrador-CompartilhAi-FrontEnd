@@ -4,15 +4,24 @@
       <h1 class="display-4">Experiências</h1>
       <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
     <div class="d-flex justify-content-rigth">
+
       <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado" *ngIf='logado()'>Cadastrar Experiência</button>
 
      <a (click)='findByIdUser()'> <button class="btn btn-dark"  [routerLink]="['/minhas-experiencias', id]" *ngIf='logado()'>Minhas Experiências</button></a>
-    </div>
 
+
+    </div>
   </div>
 
   </div>
   <div class="container">
+    <div class="row d-flex justify-content-right  mb-5">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar" [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div *ngFor='let produto of listaProduto' class="col-md-3">
         <div class="card-deck grow">
