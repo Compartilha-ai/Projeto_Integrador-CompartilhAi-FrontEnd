@@ -1,23 +1,23 @@
 .sob-navbar {
-    padding: 6rem 2rem;
+  padding: 6rem 2rem;
 }
 
 h1 {
-    color: #0C0B31;
+  color: #0C0B31;
 }
 
 .img {
-    max-width: 100%;
-    height: auto;
-    width: 500px;
+  max-width: 100%;
+  height: auto;
+  width: 500px;
 }
 
 .bg-azul {
-    background-color: #F4F4FA;
+  background-color: #F4F4FA;
 }
 
 
-.carousel-indicators{
+.carousel-indicators {
   display: flex;
   flex-direction: column;
 }
@@ -30,9 +30,21 @@ h1 {
   font-size: 21px;
   font-weight: 700;
 
-  }
+}
 
-  .carousel-indicators li:hover {
-    color: #1fac8d;
-    font-style: bold;
-  }
+.carousel-indicators li:hover {
+  color: #1fac8d;
+  font-style: bold;
+}
+
+
+.compartilhai-landing-header {
+  background-image: linear-gradient(90deg, hsl(0, 0%, 100%) 0%, #ffffff 55%, #519872 55%, #BDBDD7 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-borda{
+  border-radius: 50px;
+}
