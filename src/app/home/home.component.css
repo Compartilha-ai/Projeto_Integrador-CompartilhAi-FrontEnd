@@ -39,7 +39,7 @@ h1 {
 
 
 .compartilhai-landing-header {
-  background-image: linear-gradient(90deg, hsl(0, 0%, 100%) 0%, #ffffff 55%, #519872 55%, #BDBDD7 100%);
+  background-image: linear-gradient(90deg, hsl(0, 0%, 100%) 0%, #ffffff 55%, #38bdbd 55%, #5a83b9 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;

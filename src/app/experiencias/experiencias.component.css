@@ -13,3 +13,7 @@
 .grow:hover {
     transform: scale(110%) !important
 }
+
+.sob-navbar {
+  padding: 6rem 2rem;
+}
