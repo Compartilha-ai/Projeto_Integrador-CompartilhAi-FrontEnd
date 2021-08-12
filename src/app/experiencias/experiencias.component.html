@@ -2,37 +2,33 @@
   <div class="jumbotron jumbotron-fluid bg-azul text-light">
     <div class="container">
       <h1 class="display-4">Experiências</h1>
-      <p class="lead">Conheça diversas culturas através das comunidades estrangeiras locais.</p>
+      <p class="lead">Conheça diversas culturas do mundo pelo olhar de imigrantes e refugiados.</p>
 
-      <div class="d-flex justify-content-rigth">
-
+      <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
         <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado"
-          *ngIf='logado()'>Cadastrar Experiência</button>
+          *ngIf='logado()'>Cadastrar
+          Experiência</button>
 
         <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]"
-            *ngIf='logado()'>Minhas Experiências</button></a>
-
+            *ngIf='logado()'>Minhas
+            Experiências</button></a>
 
       </div>
+
+
+
+
     </div>
-
-
-    <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
-      <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar
-        Experiência</button>
-
-      <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]">Minhas
-          Experiências</button></a>
-    </div>
-
   </div>
 
 
 </div>
-<div class="container">
-  <div class="row d-flex justify-content-right  mb-5">
+<div class="container" style="height:800px;">
+  <div class="row d-flex justify-content-right mt-5 mb-5">
     <div class="col-md-6">
       <div class="form-group">
+        <label for="pesquisa" class="pesquisa">Comece sua pesquisa <i class="fa fa-search"
+            aria-hidden="true"></i></label>
         <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar"
           [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
       </div>
@@ -41,7 +37,7 @@
   <div class="row">
     <div *ngFor='let produto of listaProduto' class="col-md-3">
       <div class="card-deck grow">
-        <div class="card" style="height: 28rem;">
+        <div class="card" style="height:auto;">
           <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">{{produto.nome}}</h5>
@@ -99,6 +95,11 @@
             <label for="valor">Quanto vale sua Experiência?</label>
             <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor"
               placeholder="Insira o valor">
+          </div>
+          <div class="form-group">
+            <label for="imagem">Compartilhe uma foto real da sua Experiência</label>
+            <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem"
+              placeholder="Insira o link da imagem">
           </div>
         </div>
         <div class="modal-footer">

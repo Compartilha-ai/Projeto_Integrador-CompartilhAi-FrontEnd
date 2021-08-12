@@ -9,7 +9,11 @@ export class ContatoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+
+  enviar(){
+    alert('Mensagem enviada com sucesso!')
+  }
 }
