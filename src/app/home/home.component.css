@@ -17,3 +17,22 @@ h1 {
 }
 
 
+.carousel-indicators{
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-indicators li {
+  height: auto;
+  border: 0;
+  text-indent: 0;
+  background-color: transparent;
+  font-size: 21px;
+  font-weight: 700;
+
+  }
+
+  .carousel-indicators li:hover {
+    color: #1fac8d;
+    font-style: bold;
+  }
