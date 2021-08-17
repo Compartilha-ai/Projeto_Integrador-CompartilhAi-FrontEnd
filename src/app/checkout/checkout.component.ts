@@ -2,6 +2,7 @@ import { ProdutoService } from './../service/produto.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/Produto';
+import { NgxMercadopagoService } from 'ngx-mercadopago';
 
 @Component({
   selector: 'app-checkout',
@@ -15,13 +16,15 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
-  ) { }
+    private produtoService: ProdutoService,
+    private window: Window,
+    private ngxMpService: NgxMercadopagoService,
+    ) { }
 
   ngOnInit(){
-
     this.produtoId = this.route.snapshot.params["id"]
     this.findByIdProduto(this.produtoId)
+
   }
 
   findByIdProduto(id: number) {
@@ -29,4 +32,8 @@ export class CheckoutComponent implements OnInit {
       this.produto = resp
     })
   }
+
 }
+
+
+

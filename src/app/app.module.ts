@@ -20,6 +20,7 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component'
 import { CheckoutComponent } from './checkout/checkout.component'
+import { NgxMercadopagoModule } from 'ngx-mercadopago';
 
 
 
@@ -45,7 +46,9 @@ import { CheckoutComponent } from './checkout/checkout.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMercadopagoModule.forRoot({publishKey: 'APP_USR-1997808a-9826-42b0-9845-04beb6549c26',
+    pathSDK: 'https://sdk.mercadopago.com/js/v2'})
   ],
   providers: [{
     provide: LocationStrategy,
