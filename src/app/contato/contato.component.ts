@@ -15,11 +15,6 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  enviar(){
-    alert('Mensagem enviada com sucesso!')
-  }
-
   tipoMessage(event: any) {
     this.tipoMensagem = event.target.value
   }
