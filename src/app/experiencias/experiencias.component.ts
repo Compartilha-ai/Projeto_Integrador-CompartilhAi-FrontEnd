@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -28,6 +29,7 @@ export class ExperienciasComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private produtoService: ProdutoService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -62,7 +64,7 @@ export class ExperienciasComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
-      alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.findAllProduto()
       this.produto = new Produto()
     })

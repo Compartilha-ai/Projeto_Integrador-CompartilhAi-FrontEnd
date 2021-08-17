@@ -5,6 +5,7 @@ import { Produto } from 'src/app/model/Produto';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { Categoria } from 'src/app/model/Categoria';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-produto-delete',
@@ -22,14 +23,15 @@ export class ProdutoDeleteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
 
     if(environment.token == '') {
-      alert('Sua seção expirou, faça o login novamente!')
+      this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente!')
       this.router.navigate(['/entrar'])
     }
 
@@ -46,7 +48,7 @@ export class ProdutoDeleteComponent implements OnInit {
 
   apagar () {
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert('Experiência apagada com sucesso!')
+      this.alertas.showAlertSuccess('Experiência apagada com sucesso!')
       this.router.navigate(['/produto'])
     })
   }

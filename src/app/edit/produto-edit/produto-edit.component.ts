@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
 import { User } from 'src/app/model/User';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
@@ -32,13 +33,13 @@ export class ProdutoEditComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
-
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     if(environment.token == ''){
-      alert('Sua sessão expirou. Faça o login novamente.')
+      this.alertas.showAlertInfo('Sua sessão expirou. Faça o login novamente.')
       this.router.navigate(['/login'])
     }
      let id =this.route.snapshot.params['id'];
@@ -60,7 +61,7 @@ export class ProdutoEditComponent implements OnInit {
     console.log(this.produto)
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
     this.produto = resp
-    alert('Experiência atualizada com sucesso!')
+    this.alertas.showAlertSuccess('Experiência atualizada com sucesso!')
     this.router.navigate(['/home'])
     })
 

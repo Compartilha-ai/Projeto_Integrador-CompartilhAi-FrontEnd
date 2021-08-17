@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-contato',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit() {
   }
 
 
   enviar(){
-    alert('Mensagem enviada com sucesso!')
+    this.alertas.showAlertSuccess('Mensagem enviada com sucesso!')
   }
 }

@@ -19,7 +19,9 @@ import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experi
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component'
-import { CheckoutComponent } from './checkout/checkout.component'
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AlertaComponent } from './alerta/alerta.component'
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -39,13 +41,15 @@ import { CheckoutComponent } from './checkout/checkout.component'
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     UserEditComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [{
     provide: LocationStrategy,

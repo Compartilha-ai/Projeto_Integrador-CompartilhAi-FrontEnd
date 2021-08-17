@@ -7,6 +7,7 @@ import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-minhas-experiencias',
@@ -29,12 +30,13 @@ export class MinhasExperienciasComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
     if(environment.token == ''){
-      alert('Sua sessão expirou. Faça o login novamente.')
+      this.alertas.showAlertInfo('Sua sessão expirou. Faça o login novamente.')
       this.router.navigate(['/login'])
     }
 
