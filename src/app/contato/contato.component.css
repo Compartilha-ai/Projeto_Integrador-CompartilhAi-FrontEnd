@@ -1,8 +1,7 @@
 .bg-verde {
-    background-color:#DEEDF0;
+    background-color: #DEEDF0;
 }
 
-.sob-navbar {
-    padding: 6rem;
-    height: 14rem;
+* {
+    overflow: hidden;
 }

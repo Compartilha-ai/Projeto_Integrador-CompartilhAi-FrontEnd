@@ -18,7 +18,7 @@
 <body>
     <app-root></app-root>
 
-    <div vw class="enabled">
+    <div vw class="enabled mb-5">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
             <div class="vw-plugin-top-wrapper"></div>
@@ -30,6 +30,15 @@
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_nvCsIMv98MavivEFJDtyi");
+   })();
 </script>
 
 </html>

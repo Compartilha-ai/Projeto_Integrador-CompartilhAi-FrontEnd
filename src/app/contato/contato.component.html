@@ -1,52 +1,79 @@
-<div class="sob-navbar bg-verde">
-  <div class="container">
-    <h1 class="display-4">Entre em contato com a gente</h1>
-    <p class="lead">Não hesite em nos contatar caso tenha alguma dúvida, comentário ou sugestão.</p>
-  </div>
+<!-- JUMBOTRON -->
+<div class="jumbotron bg-verde">
+    <div class="container">
+        <h1 class="display-4">Entre em contato conosco</h1>
+        <p class="lead">Não hesite em nos contatar caso tenha alguma dúvida, comentário ou sugestão.</p>
+    </div>
 </div>
+<!-- JUMBOTRON -->
 
+<!-- FORMULÁRIO -->
 <div class="container mt-3 p-3 ">
-  <div class="row d-flex ">
-    <div class="col-md-7 justify-content-center">
-      <form>
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" class="form-control" id="nome" placeholder="Insira seu nome">
-        </div>
-        <div class="form-group">
-          <label for="email1">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="email@exemplo.com">
-        </div>
-        <div class="form-group">
-          <label for="phone">Contato</label>
-          <input type="phone" class="form-control" id="phone" placeholder="(99) 99999-9999">
-        </div>
-        <div class="form-group">
-          <label for="assunto">Assunto</label>
-          <select class="form-control" id="assunto">
-            <option>Dúvida</option>
-            <option>Sugestão</option>
-            <option>Reclamação</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="mensagem">Mensagem</label>
-          <textarea class="form-control" id="mensagem" rows="3"></textarea>
-        </div>
-      </form>
-      <div class="row d-flex justify-content-center">
-        <button class="btn btn-success" (click)='enviar()'>Enviar</button>
-      </div>
-    </div>
+    <div class="row d-flex ">
+        <div class="col-md-7 justify-content-center">
+            <form [formGroup]="meuFormGroup" class="contact-form" (submit)="sendEmail($event)">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="user_name" class="form-control" id="nome" formControlName="nome" placeholder="Insira seu nome">
+                    <ng-container *ngIf="meuFormGroup.controls.nome.touched">
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.nome.errors">Campo obrigatório</span>
+                    </ng-container>
+                </div>
 
-    <div class="col-md-4 ml-2">
-      <h2>Sinta-se à vontade</h2>
-      <p>Queremos saber o que você achou da plataforma e adoraríamos receber sugestões de melhorias.</p>
-      <p>Nos envie uma mensagem e responderemos o mais breve possível!</p>
+                <div>
+                    <label for="email" class="mt-2">Email</label>
+                    <input type="email" name="user_email" class="form-control" id="email" formControlName="email" placeholder="email@exemplo.com">
+                    <ng-container *ngIf="meuFormGroup.controls.email.touched">
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.required">Campo obrigatório</span>
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.email">E-mail inválido</span>
+                    </ng-container>
+                </div>
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.072243162688!2d-46.65300326909143!3d-23.566826772076638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1628532691036!5m2!1spt-BR!2sbr"
-        width="350" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div>
+                    <label for="phone" class="mt-2">Contato</label>
+                    <input type="phone" name="user_contato" class="form-control" id="phone" formControlName="contato" placeholder="(99) 99999-9999">
+                    <ng-container *ngIf="meuFormGroup.controls.contato.touched">
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.contato.errors">Campo obrigatório</span>
+                    </ng-container>
+                </div>
+
+                <div>
+                    <label for="assunto" class="mt-2">Assunto</label>
+                    <select class="form-control" id="assunto" name="assunto" formControlName="assunto" (change)='tipoMessage($event)'>
+              <option>Selecione o assunto</option>
+              <option value="duvida">Dúvida</option>
+              <option value="sugestao">Sugestão</option>
+              <option value="reclamacao">Reclamação</option>
+            </select>
+                    <ng-container *ngIf="meuFormGroup.controls.assunto.touched">
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.assunto.errors">Campo obrigatório</span>
+                    </ng-container>
+                </div>
+
+                <div>
+                    <label for="mensagem" class="mt-2">Mensagem</label>
+                    <textarea name="message" class="form-control" id="mensagem" rows="3" formControlName="mensagem" placeholder="Insira sua mensagem aqui"></textarea>
+                    <ng-container *ngIf="meuFormGroup.controls.mensagem.touched">
+                        <span class="text-danger" *ngIf="meuFormGroup.controls.mensagem.errors">Campo obrigatório</span>
+                    </ng-container>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <input class="btn btn-success mt-2" type="submit" value="Enviar" [disabled]="!meuFormGroup.valid">
+                </div>
+            </form>
+        </div>
+        <!-- FORMULÁRIO -->
+
+        <!-- MAPA -->
+        <div class="col-md-4 ml-2 p-4">
+            <h2>Sinta-se à vontade</h2>
+            <p>Queremos saber o que você achou da plataforma e adoraríamos receber sugestões de melhorias.</p>
+            <p>Nos envie uma mensagem e responderemos o mais breve possível!</p>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.072243162688!2d-46.65300326909143!3d-23.566826772076638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1628532691036!5m2!1spt-BR!2sbr"
+                width="auto" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <!-- MAPA -->
     </div>
-  </div>
 </div>
