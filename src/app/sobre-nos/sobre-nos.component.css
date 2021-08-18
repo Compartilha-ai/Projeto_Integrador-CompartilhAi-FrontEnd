@@ -1,20 +1,117 @@
+.fa {
+    color: black;
+    font-size: 15px;
+}
 
+.fa:hover {
+    color: #5CA38E
+}
 
-.sob-navbar {
-
-        padding: 6rem 2rem;
+.img-projeto {
+    border-radius: 2%;
 }
 
 
+/* CARDS SOBRE O TIME DE DESENVOLVEDOR */
 
-.fa{
-  color: black;
-  font-size: 15px;
+.img-container {
+    display: flex;
 }
 
-.fa:hover{
- color: #5CA38E
+.card {
+    width: 100%;
 }
 
+.card-footer {
+    background-color: rgb(238, 235, 235);
+    border-radius: 10px 10px 0 0;
+}
 
+.card .foto-membro {
+    width: 100%px;
+    border: white solid 5px;
+    border-radius: 100%;
+}
 
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.7s ease;
+}
+
+.social-icon:hover {
+    transform: translate3d(0, -5px, 0);
+}
+
+.card {
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    color: white;
+    transform: translate3d(0, -5px, 0);
+}
+
+.card-juliana {
+    border: solid 3px #008b8b;
+}
+
+.card-juliana:hover {
+    background-color: #008b8b;
+}
+
+.card-pacheco {
+    border: solid 3px #030177;
+}
+
+.card-pacheco:hover {
+    background-color: #030177;
+}
+
+.card-gustavo {
+    border: solid 3px #1874cd;
+}
+
+.card-gustavo:hover {
+    background-color: #1874cd;
+}
+
+.card-bruna {
+    border: solid 3px #e42e7a;
+}
+
+.card-bruna:hover {
+    background-color: #e42e7a;
+}
+
+.div-topicos {
+    background-color: #daf1b2;
+    color: #402222;
+}
+
+.titulo-topicos {
+    font-size: 64px;
+    color: #402222;
+}
+
+.text-generation {
+    padding: 0 30px 0px 0px;
+}
+
+@media (max-width: 767px) {
+    .img-container {
+        display: none;
+    }
+    .div-topicos {
+        margin-bottom: 10px;
+    }
+    .text-generation {
+        padding: 0 20px 0px 20px;
+    }
+}
+
+.row {
+    margin: 0px;
+}

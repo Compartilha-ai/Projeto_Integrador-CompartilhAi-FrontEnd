@@ -28,11 +28,13 @@ export class ExperienciasComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private produtoService: ProdutoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.findByIdUser()
-   this.findAllProduto()
+    this.findAllProduto()
+
   }
 
 
@@ -86,10 +88,9 @@ export class ExperienciasComponent implements OnInit {
     if (environment.token != ''){
       ok = true
     }
-
-    return ok
-
-
+    else{
+      alert('Cadastre-se ou faça login para efetuar a sua compra!')
+      this.router.navigate(['/login'])
+    }
   }
-
 }
