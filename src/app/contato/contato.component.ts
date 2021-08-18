@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
@@ -10,7 +11,22 @@ export class ContatoComponent implements OnInit {
 
   tipoMensagem: string
 
-  constructor() { }
+  meuFormGroup: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.meuFormGroup = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      contato: ['', Validators.required],
+      assunto: ['', Validators.required],
+      mensagem: ['', Validators.required]
+    })
+   }
 
   ngOnInit() {
   }
@@ -20,13 +36,13 @@ export class ContatoComponent implements OnInit {
   }
 
   public sendEmail(e: Event) {
-    e.preventDefault();
     emailjs.sendForm('service_afwva5f', 'template_zzcxp5a', e.target as HTMLFormElement, 'user_nvCsIMv98MavivEFJDtyi')
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text)
         alert('Mensagem enviada com sucesso!')
       }, (error) => {
-        console.log(error.text);
+        console.log(error.text)
+        alert('Formulário inválido')
       });
   }
   
