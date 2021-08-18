@@ -28,6 +28,8 @@ export class ExperienciasComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private produtoService: ProdutoService,
+
+
   ) { }
 
   ngOnInit() {

@@ -25,12 +25,37 @@ export class CheckoutComponent implements OnInit {
     this.produtoId = this.route.snapshot.params["id"]
     this.findByIdProduto(this.produtoId)
 
+    await this.ngxMpService.initialize();
+
   }
 
   findByIdProduto(id: number) {
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
       this.produto = resp
     })
+  }
+
+
+  getPaymentMethods() {
+    const PaymentMethods = this.ngxMpService.getPaymentMethods();
+}
+
+ async createToken() {
+    const cardToken = await this.ngxMpService.createToken(form).toPromise();
+  }
+
+  async getInstallments() {
+    const issuer = await this.ngxMpService.getInstallments({
+      payment_type_id: 'XX',
+      payment_method_id: 0,
+      bin: 000000
+    }).toPromise();
+  }
+
+  async getPaymentMethod() {
+    const paymentMethod = await this.ngxMpService.getPaymentMethod({
+        bin: 0000
+    }).toPromise();
   }
 
 }
