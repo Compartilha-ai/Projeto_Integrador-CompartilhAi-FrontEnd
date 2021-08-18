@@ -12,7 +12,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { MinhasExperienciasComponent } from './minhas-experiencias/minhas-experiencias.component';
@@ -45,7 +45,8 @@ import { CheckoutComponent } from './checkout/checkout.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LocationStrategy,
