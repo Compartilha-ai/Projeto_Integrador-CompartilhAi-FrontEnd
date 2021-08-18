@@ -49,11 +49,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
-    ModalModule.forRoot()
-=======
+    ModalModule.forRoot(),
     ReactiveFormsModule
->>>>>>> dcdfc05581d61afbcd06c6f18901e62df82c7bb6
   ],
   providers: [{
     provide: LocationStrategy,

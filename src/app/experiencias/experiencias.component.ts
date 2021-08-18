@@ -29,11 +29,8 @@ export class ExperienciasComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private produtoService: ProdutoService,
-<<<<<<< HEAD
-    private alertas: AlertasService
-=======
+    private alertas: AlertasService,
     private router: Router
->>>>>>> dcdfc05581d61afbcd06c6f18901e62df82c7bb6
   ) { }
 
   ngOnInit() {
@@ -94,7 +91,7 @@ export class ExperienciasComponent implements OnInit {
       ok = true
     }
     else{
-      alert('Cadastre-se ou faça login para efetuar a sua compra!')
+      this.alertas.showAlertInfo('Cadastre-se ou faça login para efetuar a sua compra!')
       this.router.navigate(['/login'])
     }
   }

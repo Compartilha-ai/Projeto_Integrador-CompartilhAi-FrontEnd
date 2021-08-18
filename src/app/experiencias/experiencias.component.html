@@ -1,111 +1,99 @@
-<div class="bg-azul sob-navbar">
-  <div class="jumbotron jumbotron-fluid bg-azul text-light">
-    <div class="container">
-      <h1 class="display-4">Experiências</h1>
-      <p class="lead">Conheça diversas culturas do mundo pelo olhar de imigrantes e refugiados.</p>
+<div class="bg-azul">
+    <div class="jumbotron jumbotron-fluid bg-azul text-light">
+        <div class="container">
+            <h1 class="display-4">Experiências</h1>
+            <p class="lead">Conheça diversas culturas do mundo pelo olhar de imigrantes e refugiados.</p>
 
-      <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
-        <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado"
-          *ngIf='logado()'>Cadastrar
+            <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
+                <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar
           Experiência</button>
 
-        <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]"
-            *ngIf='logado()'>Minhas
+                <a (click)='findByIdUser()'> <button class="btn btn-dark" [routerLink]="['/minhas-experiencias', id]">Minhas
             Experiências</button></a>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
 
 </div>
 <div class="container">
-  <div class="row d-flex justify-content-right mt-5 mb-5">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="pesquisa" class="pesquisa">Comece sua pesquisa <i class="fa fa-search"
+    <div class="row d-flex justify-content-right mt-5 mb-5">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="pesquisa" class="pesquisa">Comece sua pesquisa <i class="fa fa-search"
             aria-hidden="true"></i></label>
-        <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar"
-          [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div *ngFor='let produto of listaProduto' class="col-md-3">
-      <div class="card-deck grow">
-        <div class="card" style="height:auto;">
-          <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{produto.nome}}</h5>
-            <p class="card-text">{{produto.categoria.nome}}</p>
-            <p class="card-text">{{produto.descricao}}</p>
-            <p class="card-text">R$ {{produto.preco}}</p>
-            <div>
-              <button (click)="logado()" type="button" class="btn btn-outline-success"
-                [routerLink]="['/checkout', produto.id]">Comprar</button>
+                <input type="text" class="form-control" id="pesquisa" placeholder="Digite a experiência que deseja procurar" [(ngModel)]='produtoPost' (keyup)='findByProdutoPostagem()'>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="row">
+        <div *ngFor='let produto of listaProduto' class="col-md-3">
+            <div class="card-deck grow">
+                <div class="card" style="height:auto;">
+                    <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{produto.nome}}</h5>
+                        <p class="card-text">{{produto.categoria.nome}}</p>
+                        <p class="card-text">{{produto.descricao}}</p>
+                        <p class="card-text">R$ {{produto.preco}}</p>
+                        <div>
+                            <button (click)="logado()" type="button" class="btn btn-outline-success" [routerLink]="['/checkout', produto.id]">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
-  aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Adicionar Experiência</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Adicionar Experiência</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
-
-
-        <div class="modal-body">
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="titulo">Título da Experiência</label>
-              <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo"
-                placeholder="Digite o título">
             </div>
-            <div class="form-group">
-              <label for="texto">Descrição</label>
-              <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto"
-                rows="3"></textarea>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="titulo">Título da Experiência</label>
+                        <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Descrição</label>
+                        <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Escolha uma categoria</label>
+                        <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria">
+              <option value="">Categorias</option>
+              <option value="1">Artes</option>
+              <option value="2">Dança</option>
+              <option value="3">Entretenimento</option>
+              <option value="4">Gastronomia</option>
+              <option value="5">História e Cultura</option>
+              <option value="6">Música</option>
+              <option value="7">Tecnologia</option>
+            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Quanto vale sua Experiência?</label>
+                        <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor" placeholder="Insira o valor">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagem">Compartilhe uma foto real da sua Experiência</label>
+                        <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem" placeholder="Insira o link da imagem">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" (click)='cadastrarProduto()' data-dismiss="modal">Publicar</button>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="categoria">Escolha uma categoria</label>
-              <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria">
-
-                <option value="">Categorias</option>
-                <option value="1">Artes</option>
-                <option value="2">Dança</option>
-                <option value="3">Entretenimento</option>
-                <option value="4">Gastronomia</option>
-                <option value="5">História e Cultura</option>
-                <option value="6">Música</option>
-                <option value="7">Tecnologia</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="valor">Quanto vale sua Experiência?</label>
-              <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor"
-                placeholder="Insira o valor">
-            </div>
-            <div class="form-group">
-              <label for="imagem">Compartilhe uma foto real da sua Experiência</label>
-              <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem"
-                placeholder="Insira o link da imagem">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-success" (click)='cadastrarProduto()'
-              data-dismiss="modal">Publicar</button>
-          </div>
         </div>
-      </div>
     </div>
