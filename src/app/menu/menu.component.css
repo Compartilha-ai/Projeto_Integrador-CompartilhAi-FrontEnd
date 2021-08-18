@@ -6,12 +6,18 @@
     margin-right: 6px;
 }
 
-.edit-login i:hover {
-    cursor: pointer;
+
+.edit-login i:hover{
+  cursor: pointer;
 }
 
-.logo {
-    margin-bottom: 8px;
-    margin-left: 5px;
-    width: 120px;
+.logo{
+  margin-bottom: 8px;
+  margin-left: 5px;
+  width: 120px;
 }
+
+.header{
+  height: 80px;
+}
+
