@@ -10,11 +10,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-
   nome = environment.nomeCompleto
   foto = environment.foto
   id = environment.id
-
 
   constructor(
     private router: Router,
@@ -23,8 +21,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(){
   }
-
-
 
   logado(){
     let ok: boolean = false
@@ -36,5 +32,3 @@ export class MenuComponent implements OnInit {
     return ok
   }
 }
-
-
