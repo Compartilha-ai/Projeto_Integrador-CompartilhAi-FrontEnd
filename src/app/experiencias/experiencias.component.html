@@ -3,6 +3,7 @@
         <div class="container">
             <h1 class="display-4">Experiências</h1>
             <p class="lead">Conheça diversas culturas do mundo pelo olhar de imigrantes e refugiados.</p>
+            <p *ngIf='authService.naoLogado()' class="">Quer fazer parte da nossa comunidade? <a class="text-warning" routerLink="/cadastrar">Cadastre-se</a> ou faça o <a class="text-warning" routerLink="/login">Login</a></p>
 
             <div *ngIf='authService.vendedor()' class="d-flex justify-content-rigth">
                 <button class="btn btn-dark mr-4" data-toggle="modal" data-target="#ExemploModalCentralizado">Cadastrar
