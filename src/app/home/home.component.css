@@ -1,10 +1,7 @@
-.sob-navbar {
-  padding: 6rem 2rem;
-}
+/* *{
+  overflow: hidden;
+} */
 
-h1 {
-  color: #0C0B31;
-}
 
 .img {
   max-width: 100%;
@@ -17,12 +14,12 @@ h1 {
 }
 
 
-.carousel-indicators {
+.carrosel1 {
   display: flex;
   flex-direction: column;
 }
 
-.carousel-indicators li {
+.carrosel1 li {
   height: auto;
   border: 0;
   text-indent: 0;
@@ -32,19 +29,160 @@ h1 {
 
 }
 
-.carousel-indicators li:hover {
+.carrosel1 li:hover {
   color: #1fac8d;
   font-style: bold;
 }
 
 
 .compartilhai-landing-header {
-  background-image: linear-gradient(500deg, hsl(0, 0%, 100%) 0%, #C2E8CE 55%,#89a6c4 55%, #8999a8 100%);
+  background-image: linear-gradient(480deg, hsl(163, 247%, 191%) 0%,  #6fdf94 55%,#8ce6dd 55%, #5FB9B0 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+
+
 }
 
-.img-borda{
-  border-radius: 50px;
+
+
+
+.transparente {
+  background-color: #0c0b3179;
+  border-radius: 20px;
+
 }
+
+
+.edica-landing-section.edica-landing-testimonials {
+  background-color: #A3F7BF;
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel blockquote {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel blockquote p {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.29;
+  text-align: center;
+  color: #04879C;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel blockquote p {
+    font-size: 26px;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators {
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li {
+  width: auto;
+  height: auto;
+  text-indent: 0;
+  opacity: 1;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 8px;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li {
+    padding-top: 0;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li img {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  transition: all 0.5s ease;
+  margin-top: 8px;
+  margin-bottom: 9px;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li img {
+    width: 35px;
+    height: 35px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li .user-details {
+  visibility: hidden;
+  text-align: center;
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li .user-details h6 {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li .user-details h6 {
+    display: none;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li .user-details p {
+  font-size: 13px;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li .user-details p {
+    display: none;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li.active {
+  padding-top: 0;
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li.active img {
+  height: 82px;
+  width: 82px;
+}
+
+@media (max-width: 575px) {
+  .edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li.active img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.edica-landing-section.edica-landing-testimonials .landing-testimonial-carousel .carousel-indicators li.active .user-details {
+  visibility: visible;
+}
+
+
+
+.hover14 a img {
+	-webkit-transform: rotate(15deg) scale(0.9);
+	transform: rotate(15deg) scale(0.9);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover14 a:hover img {
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+}
+
