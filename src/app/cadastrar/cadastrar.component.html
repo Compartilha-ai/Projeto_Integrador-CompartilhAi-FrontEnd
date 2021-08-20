@@ -1,24 +1,26 @@
-<div class="container-fluid sob-navbar">
+<div class="container-fluid mt-4">
   <div class="row">
     <div class="col-md-12 mt-5 mb-5">
       <div class="row d-flex justify-content-center">
         <div class="col-md-6">
           <h1 class="text-center">Cadastrar</h1>
+          <p class="lead text-center mt-4">Cadastre-se para começar a compartilhar ou consumir experiências.</p>
+          <p class="lead text-center">Estamos ansiosos para ter você no Compartilhaí!</p>
           <div class="form-group">
-            <label for="nome">nome</label>
-            <input [(ngModel)]="user.nomeCompleto" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome" >
+            <label for="nome">Nome</label>
+            <input [(ngModel)]="user.nomeCompleto" class="form-control" type="text" name="nome" id="nome" placeholder="Insira seu nome completo" >
           </div>
           <div class="form-group">
-            <label for="login">login</label>
-            <input [(ngModel)]="user.email" class="form-control" type="email" name="login" id="login" placeholder="Seu login em forma de email">
+            <label for="login">Login</label>
+            <input [(ngModel)]="user.email" class="form-control" type="email" name="login" id="login" placeholder="Insira seu e-mail de login">
           </div>
           <div class="form-group">
-            <label for="foto">link da Foto</label>
-            <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto">
+            <label for="foto">Link da Foto</label>
+            <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto" placeholder="Insira o link de uma foto sua">
           </div>
           <div class="form-group">
-            <label for="senha">senha</label>
-            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+            <label for="senha">Senha</label>
+            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Insira sua senha">
           </div>
           <div class="form-group">
             <label for="confirmSenha">Confirmar senha</label>
@@ -32,8 +34,8 @@
             <label for="tipo">Tipo de usuário</label>
             <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
               <option>Selecione um tipo de usuário</option>
-              <option value="vendedor">vendedor</option>
-              <option value="cliente">cliente</option>
+              <option value="vendedor">Vendedor</option>
+              <option value="cliente">Cliente</option>
             </select>
           </div>
           <div class="d-flex justify-content-center mt-5">
