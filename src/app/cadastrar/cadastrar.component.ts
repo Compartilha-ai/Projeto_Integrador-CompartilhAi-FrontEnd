@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
@@ -15,11 +16,29 @@ export class CadastrarComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
 
+  meuFormGroup: FormGroup;
+
   constructor(
     private authService: AuthService,
     private router: Router,
-    private alertas: AlertasService
-  ) { }
+    private alertas: AlertasService,
+    private formBuilder: FormBuilder,
+  ) {
+    this.meuFormGroup = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      foto: ['', Validators.required],
+      senha: ['', [
+        Validators.required,
+        Validators.minLength(6)]],
+      confirmSenha: ['', Validators.required],
+      dataNasc: ['', Validators.required],
+      tipoUsuario: ['', Validators.required]
+    })
+   }
 
   ngOnInit() {
     window.scroll(0,0)
