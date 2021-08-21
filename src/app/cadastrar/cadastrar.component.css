@@ -1,4 +1,4 @@
-.cursor {
+/* .cursor {
     cursor: pointer;
 }
 
@@ -8,9 +8,26 @@
 }
 
 input {
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 select {
-    border-radius: 20px;
+    border-radius: 15px;
 }
+
+option{
+  border-radius: 15px;
+} */
+
+
+
+.card-img-right {
+  width: 30%;
+  background: scroll center url('https://i.imgur.com/VPDa3ra.jpg');
+  background-size: cover;
+}
+
+
+.card-body{
+  background: #DEEDF0;
+ }

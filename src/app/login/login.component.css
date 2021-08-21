@@ -1,8 +1,42 @@
-.conteudo {
+/* .conteudo {
     font-family: sans-serif;
     background: linear-gradient(480deg, #37e06f, #8ce6dd, #1fbdad)
 }
 
 input {
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+
+input:focus,
+select:focus, .form-group-sm:focus {
+
+  border-color: #d30a54 !important;
+  outline: 0 !important;
+  border-radius:15px!important;
+  -webkit-transition: width 0.4s ease !important;
+  transition: width 0.4s ease !important;
+  box-shadow: 0 0 0 0.2rem rgba(146, 25, 69, 0.74) !important;
+} */
+
+
+body {
+  background: #ffffff;
+
+}
+
+.card-img-left {
+  width: 50%;
+  background: scroll center url('https://i.imgur.com/87J0hJh.jpg?1');
+  background-size: cover;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.card-body{
+ background: #DEEDF0;
 }

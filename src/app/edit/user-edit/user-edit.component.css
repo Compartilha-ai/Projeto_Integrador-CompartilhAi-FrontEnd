@@ -1,9 +1,7 @@
-.sob-navbar {
-  padding: 6rem 2rem;
-}
+
 
 span{
-  background: 
+  background:
     linear-gradient(to right, rgba(157, 218, 198, 1), rgba(157, 218, 198, 1)),
     linear-gradient(to right, rgba(12, 11, 49, 1), rgba(157, 218, 198, 1), rgba(48, 75, 136, 1));
   background-size: 100% 0.1em, 0 0.1em;
@@ -16,3 +14,7 @@ span:hover,
 span:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
+
+.card-body{
+  background: #DEEDF0;
+ }

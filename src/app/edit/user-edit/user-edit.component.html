@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 mt-5 mb-5">
       <div class="row d-flex justify-content-center">
@@ -6,8 +6,20 @@
           <h1 class="text-center">Atualização de cadastro</h1>
           <p class="text-center lead mt-4">Olá, <span>{{nome}}</span>! Aqui o controle é seu!</p>
           <p class="text-center lead">Atualmente você está registrado como <span>{{tipo}}</span>, mas sabia que é possível alterar sua função?</p>
+          <p class="text-center lead mb-5">No Compartilhaí você pode alternar entre ser vendedor e cliente, a escolha é sua!</p> -->
+
+
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-12 col-xl-9 mx-auto">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Atualização de cadastro</h5>
+          <p class="text-center lead mt-4">Olá, <span>{{nome}}</span>! Aqui o controle é seu!</p>
+          <p class="text-center lead">Atualmente você está registrado como <span>{{tipo}}</span>, mas sabia que é possível alterar sua função?</p>
           <p class="text-center lead mb-5">No Compartilhaí você pode alternar entre ser vendedor e cliente, a escolha é sua!</p>
-          
+
           <div class="form-group">
             <label for="nome">Nome Completo</label>
             <input [(ngModel)]="user.nomeCompleto" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome" >

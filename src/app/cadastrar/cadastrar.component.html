@@ -1,76 +1,108 @@
-<div class="container-fluid conteudo">
-    <div class="row">
-        <div class="col-md-12 mt-4 mb-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-5">
-                    <h1 class="text-center">Cadastrar</h1>
-                    <p class="lead text-center mt-4">Cadastre-se para começar a compartilhar ou consumir experiências.</p>
-                    <p class="lead text-center">Estamos ansiosos para ter você no Compartilhaí!</p>
+<!-- <div class="container-fluid conteudo">
+  <div class="row">
+    <div class="col-md-12 mt-4 mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+          <h1 class="text-center">Cadastrar</h1>
+          <p class="lead text-center mt-4">Cadastre-se para começar a compartilhar ou consumir experiências.</p>
+          <p class="lead text-center">Estamos ansiosos para ter você no Compartilhaí!</p> -->
 
-                    <form [formGroup]="meuFormGroup">
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input [(ngModel)]="user.nomeCompleto" class="form-control" type="text" name="nome" id="nome" formControlName="nome" placeholder="Insira seu nome completo">
-                            <ng-container *ngIf="meuFormGroup.controls.nome.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.nome.errors">Campo obrigatório</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="login">Login</label>
-                            <input [(ngModel)]="user.email" class="form-control" type="email" name="login" id="login" formControlName="email" placeholder="Insira seu e-mail de login">
-                            <ng-container *ngIf="meuFormGroup.controls.email.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.required">Campo obrigatório</span>
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.email">E-mail inválido</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="foto">Link da Foto</label>
-                            <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto" formControlName="foto" placeholder="Insira o link de uma foto sua">
-                            <ng-container *ngIf="meuFormGroup.controls.foto.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.foto.errors?.required">Campo obrigatório</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input (input)='confirmSenha($event)' class="form-control" minlength="6" type="password" name="senha" id="senha" formControlName="senha" placeholder="Insira sua senha">
-                            <ng-container *ngIf="meuFormGroup.controls.senha.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.required">Campo obrigatório</span>
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.minlength">A senha deve ter no mínimo 6 dígitos</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmSenha">Confirmar senha</label>
-                            <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha" formControlName="confirmSenha" placeholder="Confirme sua senha">
-                            <ng-container *ngIf="meuFormGroup.controls.confirmSenha.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.confirmSenha.errors?.required">Campo obrigatório</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="idade">Data de Nascimento</label>
-                            <input [(ngModel)]='user.dataNascimento' class="form-control" type="date" name="idade" id="idade" formControlName="dataNasc" placeholder="Sua data de nascimento">
-                            <ng-container *ngIf="meuFormGroup.controls.dataNasc.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.dataNasc.errors?.required">Campo obrigatório</span>
-                            </ng-container>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipo">Tipo de usuário</label>
-                            <select class="form-control" name="tipo" id="tipo" formControlName="tipoUsuario" (change)='tipoUser($event)'>
-              <option>Selecione um tipo de usuário</option>
-              <option value="vendedor">Vendedor</option>
-              <option value="cliente">Cliente</option>
-            </select>
-                            <ng-container *ngIf="meuFormGroup.controls.tipoUsuario.touched">
-                                <span class="text-danger" *ngIf="meuFormGroup.controls.tipoUsuario.errors?.required">Campo obrigatório</span>
-                            </ng-container>
-                        </div>
-                        <div class="d-flex justify-content-center mt-5">
-                            <button type="submit" class="btn btn-danger mr-4" routerLink="/login">Cancelar</button>
-                            <button type="submit" class="btn btn-success cursor" [disabled]="!meuFormGroup.valid" (click)='cadastrar()'>Cadastrar</button>
-                        </div>
-                    </form>
 
-                </div>
+
+
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-12 col-xl-12 mx-auto">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastrar</h5>
+          <p class="lead text-center mt-4">Cadastre-se para começar a compartilhar ou consumir experiências.</p>
+          <p class="lead text-center">Estamos ansiosos para ter você no Compartilhaí!</p>
+
+
+
+
+          <form [formGroup]="meuFormGroup">
+            <div class="form-group mt-5">
+              <label for="nome">Nome</label>
+              <input [(ngModel)]="user.nomeCompleto" class="form-control" type="text" name="nome" id="nome"
+                formControlName="nome" placeholder="Insira seu nome completo">
+              <ng-container *ngIf="meuFormGroup.controls.nome.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.nome.errors">Campo obrigatório</span>
+              </ng-container>
             </div>
+            <div class="form-group">
+              <label for="login">Login</label>
+              <input [(ngModel)]="user.email" class="form-control" type="email" name="login" id="login"
+                formControlName="email" placeholder="Insira seu e-mail de login">
+              <ng-container *ngIf="meuFormGroup.controls.email.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.required">Campo obrigatório</span>
+                <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.email">E-mail inválido</span>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="foto">Link da Foto</label>
+              <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto"
+                formControlName="foto" placeholder="Insira o link de uma foto sua">
+              <ng-container *ngIf="meuFormGroup.controls.foto.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.foto.errors?.required">Campo obrigatório</span>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <input (input)='confirmSenha($event)' class="form-control" minlength="6" type="password" name="senha"
+                id="senha" formControlName="senha" placeholder="Insira sua senha">
+              <ng-container *ngIf="meuFormGroup.controls.senha.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.required">Campo obrigatório</span>
+                <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.minlength">A senha deve ter no
+                  mínimo 6 dígitos</span>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="confirmSenha">Confirmar senha</label>
+              <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+                formControlName="confirmSenha" placeholder="Confirme sua senha">
+              <ng-container *ngIf="meuFormGroup.controls.confirmSenha.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.confirmSenha.errors?.required">Campo
+                  obrigatório</span>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="idade">Data de Nascimento</label>
+              <input [(ngModel)]='user.dataNascimento' class="form-control" type="date" name="idade" id="idade"
+                formControlName="dataNasc" placeholder="Sua data de nascimento">
+              <ng-container *ngIf="meuFormGroup.controls.dataNasc.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.dataNasc.errors?.required">Campo
+                  obrigatório</span>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <label for="tipo">Tipo de usuário</label>
+              <select class="form-control" name="tipo" id="tipo" formControlName="tipoUsuario"
+                (change)='tipoUser($event)'>
+                <option>Selecione um tipo de usuário</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="cliente">Cliente</option>
+              </select>
+              <ng-container *ngIf="meuFormGroup.controls.tipoUsuario.touched">
+                <span class="text-danger" *ngIf="meuFormGroup.controls.tipoUsuario.errors?.required">Campo
+                  obrigatório</span>
+              </ng-container>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+              <button type="submit" class="btn btn-danger mr-4" routerLink="/login">Cancelar</button>
+              <button type="submit" class="btn btn-success cursor" [disabled]="!meuFormGroup.valid"
+                (click)='cadastrar()'>Cadastrar</button>
+            </div>
+          </form>
         </div>
+
+        <div class="card-img-right d-none d-md-flex">
+          <!-- Background imagem-->
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>

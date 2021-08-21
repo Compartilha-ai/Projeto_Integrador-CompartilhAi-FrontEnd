@@ -1,5 +1,5 @@
 .bg-azul {
-    background-color: #304B88;
+    background-color: #9DDAC6;
 }
 
 .bg-cinza {
@@ -7,16 +7,17 @@
 }
 
 .txt-laranja {
-    color: #FF8804;
+    color: #0C0B31;
+}
+
+.txt-cinza{
+  color:#004445
 }
 
 .grow:hover {
     transform: scale(110%) !important
 }
 
-.sob-navbar {
-    padding: 6rem 2rem;
-}
 
 .fa-search {
     font-size: 20px;
@@ -29,6 +30,11 @@
 .foto-experiencia {
     padding: 5px;
     margin: 5px;
-    border: solid 3px;
-    border-color: #eeeeee;
+    border: solid 2px;
+    border-color: #CBE2B0;
+}
+
+.card{
+  border: solid 2px;
+  border-color: #60A9A6;
 }

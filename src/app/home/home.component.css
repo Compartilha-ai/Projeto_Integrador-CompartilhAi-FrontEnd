@@ -32,7 +32,8 @@
 }
 
 .compartilhai-landing-header {
-    background-image: linear-gradient(480deg, hsl(163, 247%, 191%) 0%, #6fdf94 55%, #8ce6dd 55%, #5FB9B0 100%);
+    /* background-image: linear-gradient(480deg, hsl(163, 247%, 191%) 0%, #6fdf94 55%, #8ce6dd 55%, #5FB9B0 100%); */
+    background: #A3F7BF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,4 +172,10 @@
 .hover14 a:hover img {
     -webkit-transform: rotate(0) scale(1);
     transform: rotate(0) scale(1);
+}
+
+
+.creditos{
+  font-size: small;
+  color:black;
 }
