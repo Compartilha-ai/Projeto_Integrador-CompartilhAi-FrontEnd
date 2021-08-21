@@ -16,6 +16,8 @@ import { AlertasService } from '../service/alertas.service';
 })
 export class MinhasExperienciasComponent implements OnInit {
 
+  verificaProd: boolean = false
+
   user: User = new User()
   idUser = environment.id
   userId: number
@@ -35,6 +37,8 @@ export class MinhasExperienciasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
+
     if(environment.token == ''){
       this.alertas.showAlertInfo('Sua sessão expirou. Faça o login novamente.')
       this.router.navigate(['/login'])
@@ -45,8 +49,6 @@ export class MinhasExperienciasComponent implements OnInit {
 
     this.getAllCategoria()
     this.getAllProduto()
-
-
   }
 
   findByIdUser(id: number){
@@ -66,5 +68,4 @@ export class MinhasExperienciasComponent implements OnInit {
       this.listaProduto = resp
     })
   }
-
 }

@@ -15,13 +15,20 @@
 }
 
 .sob-navbar {
-  padding: 6rem 2rem;
+    padding: 6rem 2rem;
 }
 
-.fa-search{
-font-size: 20px;
+.fa-search {
+    font-size: 20px;
 }
 
-.pesquisa{
-  font-size: 25px;
+.pesquisa {
+    font-size: 25px;
+}
+
+.foto-experiencia {
+    padding: 5px;
+    margin: 5px;
+    border: solid 3px;
+    border-color: #eeeeee;
 }

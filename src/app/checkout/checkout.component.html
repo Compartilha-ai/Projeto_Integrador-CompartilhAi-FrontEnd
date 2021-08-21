@@ -1,71 +1,70 @@
 <div class="container sob-navbar">
 
-  <div class="row mt-3 mb-4">
-    <div class="col-md-12">
-      <h1 class="text-center">Detalhes do pedido</h1>
+    <div class="row mt-3 mb-4">
+        <div class="col-md-12">
+            <h1 class="text-center">Detalhes do pedido</h1>
+        </div>
     </div>
-  </div>
 
-  <!-- LINHA DA DIV MAIOR -->
-  <div class="container d-flex justify-content-center">
-    <div class="col-md-10 borda">
+    <!-- LINHA DA DIV MAIOR -->
+    <div class="container d-flex justify-content-center">
+        <div class="col-md-10 borda">
 
-      <!-- DIV DA EXPERIÊNCIA -->
-      <div class="row mt-3">
+            <!-- DIV DA EXPERIÊNCIA -->
+            <div class="row mt-3">
 
-        <!-- foto do produto -->
-        <div class="col-md-3">
-          <div class="card">
-            <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem do produto">
-          </div>
-        </div>
-
-        <!-- nome e descricao do produto -->
-        <div class="col-md-5">
-          <h5 class="card-title">{{produto.nome}}</h5>
-          <p class="card-text">{{produto.descricao}}</p>
-        </div>
-
-        <!-- preço -->
-        <div class="col-md-4 d-flex justify-content-center">
-          <p class="card-text d-flex align-items-center">R$ {{produto.preco|  number: '1.2-2'}}</p>
-        </div>
-
-      </div>
-
-      <!-- DIV FINAL -->
-      <div class="row">
-
-        <!-- botão de finalizar -->
-        <div class="col-md-12 d-flex justify-content-center">
-          <button type="button" class="btn btn-outline-success mt-5 mb-2" data-toggle="modal"
-            data-target=".bd-pagamento-lg">Finalizar compra</button>
-
-
-          <!-- MODAL PAYPAL -->
-          <div class="modal fade bd-pagamento-lg" tabindex="-1" role="dialog" aria-labelledby="modalPaypal"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-body text-center">
-                  <div class="d-flex justify-content-center mt-5">
-                    <h2>Escolha a forma de pagamento</h2>
-                  </div>
-                  <h3 class="my-3">Total a pagar R${{ produto.preco| number: '1.2-2' }}</h3>
-                  <div class="container mt-3">
-                    <div class="pay" #paypal></div>
-                  </div>
-                  <hr class="hr3">
+                <!-- foto do produto -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem do produto">
+                    </div>
                 </div>
-              </div>
+
+                <!-- nome e descricao do produto -->
+                <div class="col-md-5">
+                    <h5 class="card-title">{{produto.nome}}</h5>
+                    <p class="card-text">{{produto.descricao}}</p>
+                </div>
+
+                <!-- preço -->
+                <div class="col-md-4 d-flex justify-content-center">
+                    <p class="card-text d-flex align-items-center">R$ {{produto.preco| number: '1.2-2'}}</p>
+                </div>
+
             </div>
-          </div>
-          <!-- /MODAL PAYPAL -->
 
+            <!-- DIV FINAL -->
+            <div class="row">
+
+                <!-- botão de finalizar -->
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-danger mt-5 mb-2 mr-3" routerLink='/produto'>Cancelar</button>
+                    <button type="button" class="btn btn-outline-success mt-5 mb-2" data-toggle="modal" data-target=".bd-pagamento-lg">Finalizar compra</button>
+
+
+                    <!-- MODAL PAYPAL -->
+                    <div class="modal fade bd-pagamento-lg" tabindex="-1" role="dialog" aria-labelledby="modalPaypal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-body text-center">
+                                    <div class="d-flex justify-content-center mt-5">
+                                        <h2>Escolha a forma de pagamento</h2>
+                                    </div>
+                                    <h3 class="my-3">Total a pagar R${{ produto.preco| number: '1.2-2' }}</h3>
+                                    <div class="container mt-3">
+                                        <div class="pay" #paypal></div>
+                                    </div>
+                                    <hr class="hr3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /MODAL PAYPAL -->
+
+                </div>
+
+            </div>
         </div>
-
-      </div>
     </div>
-  </div>
 
 </div>

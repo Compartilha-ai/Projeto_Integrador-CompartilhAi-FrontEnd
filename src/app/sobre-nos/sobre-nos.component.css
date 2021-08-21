@@ -10,10 +10,14 @@
 .img-projeto {
     border-radius: 2%;
 }
+
+
 /* TECNOLOGIAS UTILIZADAS */
 
-.tamanho-icone{     height: 32px;     width: 32px; }
-
+.tamanho-icone {
+    height: 32px;
+    width: 32px;
+}
 
 
 /* CARDS SOBRE O TIME DE DESENVOLVEDOR */
@@ -32,7 +36,7 @@
 }
 
 .card .foto-membro {
-    width: 100%px;
+    width: 90%;
     border: white solid 5px;
     border-radius: 100%;
 }

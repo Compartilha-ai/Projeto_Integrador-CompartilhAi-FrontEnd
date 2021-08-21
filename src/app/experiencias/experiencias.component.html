@@ -29,17 +29,19 @@
         </div>
     </div>
     <div class="row">
-        <div *ngFor='let produto of listaProduto' class="col-md-3">
+        <div *ngFor='let produto of listaProduto' class="col-md-3 d-flex justify-content-center mb-5">
             <div class="card-deck grow">
                 <div class="card" style="height:auto;">
-                    <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+                    <div class="foto-experiencia">
+                        <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{produto.nome}}</h5>
                         <p class="card-text">{{produto.categoria.nome}}</p>
                         <p class="card-text">{{produto.descricao}}</p>
                         <p class="card-text">R$ {{produto.preco}}</p>
-                        <div>
-                            <button (click)="logado()" type="button" class="btn btn-outline-success" [routerLink]="['/checkout', produto.id]">Comprar</button>
+                        <div class="d-flex justify-content-center">
+                            <button (click)="logado()" type="button" class="btn btn-outline-success grow" [routerLink]="['/checkout', produto.id]">Comprar</button>
                         </div>
                     </div>
                 </div>

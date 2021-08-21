@@ -34,9 +34,10 @@ export class ExperienciasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
+
     this.findByIdUser()
     this.findAllProduto()
-
   }
 
 
