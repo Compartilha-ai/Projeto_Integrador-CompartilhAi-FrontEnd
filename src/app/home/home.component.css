@@ -31,10 +31,6 @@
     font-style: bold;
 }
 
-.posicao-botao {
-    margin-top: 20%;
-}
-
 .compartilhai-landing-header {
     background-image: linear-gradient(480deg, hsl(163, 247%, 191%) 0%, #6fdf94 55%, #8ce6dd 55%, #5FB9B0 100%);
     display: flex;

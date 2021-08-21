@@ -1,3 +1,16 @@
 .cursor {
     cursor: pointer;
 }
+
+.conteudo {
+    font-family: sans-serif;
+    background: linear-gradient(480deg, #37e06f, #8ce6dd, #1fbdad)
+}
+
+input {
+    border-radius: 20px;
+}
+
+select {
+    border-radius: 20px;
+}
