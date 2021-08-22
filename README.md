@@ -3,7 +3,7 @@
 
 
 <h1 align="center">
-    <img alt="GetSet E-commerce" href="#" src="https://i.imgur.com/PfLPX1A.png" />
+    <img alt="GetSet E-commerce" href="#" src="https://i.imgur.com/xxGbFoa.png" />
 </h1>
 
 ##### Confira nosso deploy aqui: https://compartilhai.netlify.app/
