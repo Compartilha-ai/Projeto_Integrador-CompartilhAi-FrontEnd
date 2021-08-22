@@ -20,6 +20,8 @@ export class UserEditComponent implements OnInit {
 
   nome = environment.nomeCompleto
   tipo = environment.tipo
+  foto = environment.foto
+
 
   constructor(
     private authService: AuthService,
@@ -75,16 +77,11 @@ export class UserEditComponent implements OnInit {
 
       this.authService.putUser(this.user).subscribe((resp: User) =>{
         this.user = resp
-        this.router.navigate(['/inicio'])
-
         this.alertas.showAlertSuccess('Usuário atualizado com sucesso, faça o login novamente.')
-        environment.token = ''
-        environment.nomeCompleto = ''
-        environment.foto = ''
-        environment.id = 0
+    
         this.router.navigate(['/login'])
 
-        })
+      })
 
     }
 

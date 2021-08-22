@@ -1,22 +1,26 @@
 <div class="container">
-    <div class="row p-0">
-        <div class="col-md-3" *ngFor='let produto of user.produto'>
-            <div class="card-deck grow mb-5 mt-5">
-                <div class="card" style="height: auto;">
-                    <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{produto.nome}}</h5>
-                        <p class="card-text">{{produto.categoria.nome}}</p>
-                        <p class="card-text">{{produto.descricao}}</p>
-                        <p class="card-text">R$ {{produto.preco}}</p>
-                        <div class="row d-flex justify-content-center mr-8">
-                            <button type="button" class="btn btn-warning mr-3" [routerLink]="['/produto-edit', produto.id]">Editar</button>
-                            <button type="button" class="btn btn-danger" [routerLink]="['/produto-delete', produto.id]">Deletar</button>
-                        </div>
-                    </div>
-
-                </div>
+   <h1 class="text-center mt-5">Minhas experiências</h1>
+  <p class="text-center lead">Olá, <span>{{nome}} </span>! Estas são as experiências que você já cadastrou no Compartilhaí </p>
+  <div class="row p-0">
+    <div class="col-md-3" *ngFor='let produto of user.produto'>
+      <div class="card-deck grow mb-5 mt-5">
+        <div class="card" style="height: auto;">
+          <img class="card-img-top" src="{{produto.multimidia}}" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">{{produto.nome}}</h5>
+            <p class="card-text">{{produto.categoria.nome}}</p>
+            <p class="card-text">{{produto.descricao}}</p>
+            <p class="card-text">R$ {{produto.preco}}</p>
+            <div class="row d-flex justify-content-center mr-8">
+              <button type="button" class="btn btn-warning mr-3"
+                [routerLink]="['/produto-edit', produto.id]">Editar</button>
+              <button type="button" class="btn btn-danger"
+                [routerLink]="['/produto-delete', produto.id]">Deletar</button>
             </div>
+          </div>
+
         </div>
+      </div>
     </div>
+  </div>
 </div>

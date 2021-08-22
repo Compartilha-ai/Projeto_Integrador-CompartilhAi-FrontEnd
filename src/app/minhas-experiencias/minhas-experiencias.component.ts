@@ -22,6 +22,8 @@ export class MinhasExperienciasComponent implements OnInit {
   idUser = environment.id
   userId: number
 
+  nome = environment.nomeCompleto
+  
   produto: Produto = new Produto()
   listaProduto: Produto[]
 

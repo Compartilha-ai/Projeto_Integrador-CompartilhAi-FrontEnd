@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       console.log(environment.id)
       this.router.navigate(['/home'])
     }, error => {
-      if(error.status == 500){
+      if(error.status == 401){
         this.alertas.showAlertDanger('Usuário ou senha estão incorretos')
       }
     })

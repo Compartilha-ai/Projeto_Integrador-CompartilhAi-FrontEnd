@@ -31,8 +31,8 @@ export class ProdutoDeleteComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == '') {
-      this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente!')
-      this.router.navigate(['/entrar'])
+      this.alertas.showAlertInfo('Sua sessão expirou, faça o login novamente!')
+      this.router.navigate(['/login'])
     }
 
     this.idProduto = this.route.snapshot.params['id']

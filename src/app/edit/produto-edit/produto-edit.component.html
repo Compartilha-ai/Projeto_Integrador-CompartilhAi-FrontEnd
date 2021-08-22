@@ -1,8 +1,14 @@
-<div class="container pb-4">
 
+
+
+  <div class="container mt-5 mb-5">
     <div class="row">
+      <div class="col-lg-12 col-xl-12 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-body p-4 p-sm-5">
+             <h1 class="text-center">Atualize sua experiência</h1>
+          <div class="row">
         <div class="col-md-7 mt-4">
-            <h1>Atualize sua experiência</h1>
             <div class="form-group mt-5">
                 <label for="titulo">Título da Experiência</label>
                 <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o título">
@@ -39,7 +45,7 @@
         </div>
 
         <div class="col-md-5 d-flex align-items-center">
-            <img class="featurette-image img-fluid mx-auto" src="https://i.imgur.com/wvv7AkA.png" alt="">
+            <img class="featurette-image img-fluid mx-auto" src="{{produto.multimidia}}">
         </div>
     </div>
 </div>
