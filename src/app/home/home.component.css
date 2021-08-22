@@ -15,7 +15,10 @@
 .carrosel1 {
     display: flex;
     flex-direction: column;
+
 }
+
+
 
 .carrosel1 li {
     height: auto;
@@ -32,8 +35,9 @@
 }
 
 .compartilhai-landing-header {
-    /* background-image: linear-gradient(480deg, hsl(163, 247%, 191%) 0%, #6fdf94 55%, #8ce6dd 55%, #5FB9B0 100%); */
-    background: #A3F7BF;
+    background-image: linear-gradient(600deg, hsl(163, 247%, 191%) -40%, #AACFCF 55%, #BAE5E5 55%,
+    #BEEBE9 100%);
+    /* background: #A3F7BF; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,3 +183,5 @@
   font-size: small;
   color:black;
 }
+
+
