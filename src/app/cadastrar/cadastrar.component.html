@@ -73,8 +73,7 @@
               <input [(ngModel)]='user.dataNascimento' class="form-control" type="date" name="idade" id="idade"
                 formControlName="dataNasc" placeholder="Sua data de nascimento">
               <ng-container *ngIf="meuFormGroup.controls.dataNasc.touched">
-                <span class="text-danger" *ngIf="meuFormGroup.controls.dataNasc.errors?.required">Campo
-                  obrigatório</span>
+                <span class="text-danger" *ngIf="meuFormGroup.controls.dataNasc.errors?.required">O usuário deve ser maior de idade</span>
               </ng-container>
             </div>
             <div class="form-group">
