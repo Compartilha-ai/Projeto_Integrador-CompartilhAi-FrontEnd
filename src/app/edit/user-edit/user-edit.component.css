@@ -1,6 +1,6 @@
 
 
-span{
+.interpolacao{
   background:
     linear-gradient(to right, rgba(157, 218, 198, 1), rgba(157, 218, 198, 1)),
     linear-gradient(to right, rgba(12, 11, 49, 1), rgba(157, 218, 198, 1), rgba(48, 75, 136, 1));
@@ -10,11 +10,15 @@ span{
   transition: background-size 400ms;
 }
 
-span:hover,
-span:focus {
+.interpolacao:hover,
+.interpolacao:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
 
 .card-body{
   background: #DEEDF0;
  }
+
+ .pointer {
+  cursor: pointer;
+}

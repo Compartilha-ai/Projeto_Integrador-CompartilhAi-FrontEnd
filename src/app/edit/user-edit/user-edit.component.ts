@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/User';
 import { AlertasService } from 'src/app/service/alertas.service';
@@ -22,13 +23,30 @@ export class UserEditComponent implements OnInit {
   tipo = environment.tipo
   foto = environment.foto
 
+  meuFormGroup: FormGroup;
 
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-    private alertas: AlertasService
-  ) { }
+    private alertas: AlertasService,
+    private formBuilder: FormBuilder,
+  ) {
+    this.meuFormGroup = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      foto: ['', Validators.required],
+      senha: ['', [
+        Validators.required,
+        Validators.minLength(6)]],
+      confirmSenha: ['', Validators.required],
+      dataNasc: ['', Validators.required],
+      tipoUsuario: ['', Validators.required]
+    })
+   }
 
   ngOnInit() {
     window.scroll(0,0)

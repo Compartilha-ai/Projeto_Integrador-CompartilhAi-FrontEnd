@@ -33,19 +33,29 @@
             <!-- Background imagem-->
           </div>
           <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Vamos lá?</h5>
-            <form>
+            <h4 class="card-title text-center mb-5 fw-light fs-5">Vamos lá?</h4>
+            
+            <form [formGroup]="meuFormGroup">
 
-              <div class="form-floating mb-3">
-                <label for="floatingInputUsername">Login</label>
-                <input [(ngModel)]="userLogin.email" type="text" class="form-control" id="floatingInputUsername"
+              <div class="form-floating form-group mb-3">
+                <label for="login">Login</label>
+                <input [(ngModel)]="userLogin.email" type="text" class="form-control" name="login" id="login" formControlName="email"
                   placeholder="Insira seu e-mail" name="login" required autofocus>
+                <ng-container *ngIf="meuFormGroup.controls.email.touched">
+                  <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.required">Campo obrigatório</span>
+                  <span class="text-danger" *ngIf="meuFormGroup.controls.email.errors?.email">E-mail inválido</span>
+                 </ng-container>
               </div>
 
-              <div class="form-floating mb-3">
-                <label for="floatingPassword">Senha</label>
-                <input [(ngModel)]="userLogin.senha" type="password" class="form-control" id="floatingPassword"
+              <div class="form-floating form-group mb-3">
+                <label for="senha">Senha</label>
+                <input [(ngModel)]="userLogin.senha" type="password" class="form-control" id="senha" formControlName="senha"
                   placeholder="Insira sua senha" name="senha">
+                <ng-container *ngIf="meuFormGroup.controls.senha.touched">
+                  <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.required">Campo obrigatório</span>
+                  <span class="text-danger" *ngIf="meuFormGroup.controls.senha.errors?.minlength">A senha deve ter no
+                      mínimo 6 dígitos</span>
+                </ng-container>
               </div>
 
 
@@ -61,6 +71,7 @@
 
 
             </form>
+
           </div>
         </div>
       </div>

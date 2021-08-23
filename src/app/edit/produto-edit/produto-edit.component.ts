@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
@@ -28,14 +29,25 @@ export class ProdutoEditComponent implements OnInit {
   idCategoria: number
   tipoCategoria: number
 
+  meuFormGroup: FormGroup;
+
   constructor(
     private route: ActivatedRoute,
     private authService: AuthService,
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private alertas: AlertasService
-  ) { }
+    private alertas: AlertasService,
+    private formBuilder: FormBuilder,
+  ) {
+    this.meuFormGroup = this.formBuilder.group({
+      titulo: ['', Validators.required],
+      descricao: ['', Validators.required],
+      categoria: ['', Validators.required],
+      valor: ['', Validators.required],
+      foto: ['', Validators.required]
+    })
+   }
 
   ngOnInit() {
     window.scroll(0,0)

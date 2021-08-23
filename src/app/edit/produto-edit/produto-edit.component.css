@@ -2,3 +2,7 @@
 .card-body{
   background: #DEEDF0;
  }
+
+.pointer {
+  cursor: pointer;
+}

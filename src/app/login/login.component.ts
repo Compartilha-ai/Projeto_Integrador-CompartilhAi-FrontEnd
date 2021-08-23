@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
@@ -15,12 +16,25 @@ export class LoginComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
 
+  meuFormGroup: FormGroup;
+
 
   constructor(
     private auth: AuthService,
     private router: Router,
-    private alertas: AlertasService
-  ) { }
+    private alertas: AlertasService,
+    private formBuilder: FormBuilder
+  ) {
+    this.meuFormGroup = this.formBuilder.group({
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      senha: ['', [
+        Validators.required,
+        Validators.minLength(6)]]
+    })
+   }
 
   ngOnInit(){
     window.scroll(0,0)

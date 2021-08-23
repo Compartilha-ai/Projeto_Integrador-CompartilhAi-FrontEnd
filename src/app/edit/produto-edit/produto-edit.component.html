@@ -9,39 +9,57 @@
              <h1 class="text-center">Atualize sua experiência</h1>
           <div class="row">
         <div class="col-md-7 mt-4">
+
+            <form [formGroup]="meuFormGroup">
             <div class="form-group mt-5">
                 <label for="titulo">Título da Experiência</label>
-                <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+                <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" formControlName="titulo" placeholder="Digite o título">
+                <ng-container *ngIf="meuFormGroup.controls.titulo.touched">
+                    <span class="text-danger" *ngIf="meuFormGroup.controls.titulo.errors">Campo obrigatório</span>
+                </ng-container>
             </div>
             <div class="form-group">
                 <label for="texto">Descrição</label>
-                <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3"></textarea>
+                <textarea [(ngModel)]='produto.descricao' class="form-control" name="texto" id="texto" rows="3" formControlName="descricao"></textarea>
+                <ng-container *ngIf="meuFormGroup.controls.descricao.touched">
+                    <span class="text-danger" *ngIf="meuFormGroup.controls.descricao.errors">Campo obrigatório</span>
+                </ng-container>
             </div>
             <div class="form-group">
                 <label for="categoria">Escolha uma categoria</label>
-                <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria">
-      <option value="">Categorias</option>
-      <option value="1">Artes</option>
-      <option value="2">Dança</option>
-      <option value="3">Entretenimento</option>
-      <option value="4">Gastronomia</option>
-      <option value="5">História e Cultura</option>
-      <option value="6">Música</option>
-      <option value="7">Tecnologia</option>
-    </select>
+                <select (change)='categoriaId($event)' class="form-control" name="categoria" id="categoria" formControlName="categoria">
+                    <option value="">Categorias</option>
+                    <option value="1">Artes</option>
+                    <option value="2">Dança</option>
+                    <option value="3">Entretenimento</option>
+                    <option value="4">Gastronomia</option>
+                    <option value="5">História e Cultura</option>
+                    <option value="6">Música</option>
+                    <option value="7">Tecnologia</option>
+                </select>
+                <ng-container *ngIf="meuFormGroup.controls.categoria.touched">
+                    <span class="text-danger" *ngIf="meuFormGroup.controls.categoria.errors?.required">Campo obrigatório</span>
+                </ng-container>
             </div>
             <div class="form-group">
                 <label for="valor">Quanto vale sua Experiência?</label>
-                <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor" placeholder="Insira o valor">
+                <input [(ngModel)]='produto.preco' type="number" step="50.00" class="form-control" id="valor" formControlName="valor" placeholder="Insira o valor">
+                <ng-container *ngIf="meuFormGroup.controls.valor.touched">
+                    <span class="text-danger" *ngIf="meuFormGroup.controls.valor.errors?.required">Campo obrigatório</span>
+                  </ng-container>
             </div>
             <div class="form-group">
                 <label for="imagem">Compartilhe uma foto real da sua Experiência</label>
-                <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem" placeholder="Insira o link da imagem">
+                <input [(ngModel)]='produto.multimidia' type="url" class="form-control" id="imagem" formControlName="foto" placeholder="Insira o link da imagem">
+                <ng-container *ngIf="meuFormGroup.controls.foto.touched">
+                    <span class="text-danger" *ngIf="meuFormGroup.controls.foto.errors?.required">Campo obrigatório</span>
+                </ng-container>
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="button" class="btn btn-danger" routerLink='/produto'>Cancelar</button>
-                <button type="button" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+                <button type="button" class="btn btn-success pointer" [disabled]="!meuFormGroup.valid" (click)='atualizar()'>Atualizar</button>
             </div>
+        </form>
         </div>
 
         <div class="col-md-5 d-flex align-items-center">
