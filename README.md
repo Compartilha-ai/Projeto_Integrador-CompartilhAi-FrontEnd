@@ -54,8 +54,8 @@
 -   Protótipo:  **[Canva](https://www.canva.com/pt_br/)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**, **[Eclipse](https://www.eclipse.org/)**
 -   Teste de API:  **[Postman](https://www.postman.com/)**
--   API's: **[Paypal Checkout de Pagamentos](https://www.paypal.com/br/webapps/mpp/merchant-integration/)**, **[API Tidio - Atendimento](https://www.tidio.com/)**
--   Plug-in: **[Hand Talk](https://docs.handtalk.me/br/4/introducao)**
+-   API's: **[Paypal Checkout de Pagamentos](https://www.paypal.com/br/webapps/mpp/merchant-integration/)**, **[API Tidio - Atendimento](https://www.tidio.com/)**, **[Email js](https://www.emailjs.com/)**
+-   Plug-in: **[V LIBRAS](https://www.gov.br/governodigital/pt-br/vlibras)**
 
 
 
